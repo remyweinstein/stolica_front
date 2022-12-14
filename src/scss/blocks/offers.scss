@@ -1,4 +1,8 @@
 .offers {
+    width: 100%;
+    overflow: hidden;
+    height: 45em;
+    position: relative;
 
     .offers_header {
         display: grid;
@@ -18,7 +22,7 @@
     }
 
     .offers_list {
-        overflow: hidden;
+        position: absolute;
 
         li {
             display: inline-block;

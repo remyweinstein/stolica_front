@@ -10,16 +10,9 @@ module.exports = function(grunt) {
             livereload: 35729
           }
         },
-        concat: {
-          files: 'src/js/*.js',
-          tasks: ['concat']
-        },
-        uglify: {
-          files: 'build/js/built.js',
-          tasks: ['uglify'],
-          options: {
-            livereload: true
-          }
+        js: {
+          files: ['src/js/stolica.js', 'src/js/banner.js', 'src/js/slider.js', 'src/js/app.js'],
+          tasks: ['js']
         },
         all: {
           files: ['**/*.html'],
@@ -35,7 +28,7 @@ module.exports = function(grunt) {
           separator: '\n/*next file*/\n\n'
         },
         dist: {
-          src: 'src/js/*.js',
+          src: ['src/js/stolica.js', 'src/js/banner.js', 'src/js/slider.js', 'src/js/app.js'],
           dest: 'build/js/built.js'
         }
       },

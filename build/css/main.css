@@ -633,8 +633,8 @@ header .header_search_panel .header_search_panel__actions .header_search_panel__
   background-color: #ebebeb;
 }
 header .header_search_panel .header_search_panel__actions .header_search_panel__actions__button.active {
-  background-color: #364abc;
-  background: linear-gradient(130deg, #364abc 0%, #1f9363 100%);
+  background-color: rgb(54, 74, 188);
+  background: linear-gradient(130deg, rgb(54, 74, 188) 0%, rgb(31, 147, 99) 100%);
 }
 header .header_search_panel .header_search_panel__actions .header_search_panel__actions__button.active.heart:after {
   content: "";
@@ -671,8 +671,8 @@ header .header_search_panel .header_search_panel__actions .header_search_panel__
   justify-self: right;
   border-radius: 1.25em;
   color: #fff;
-  background-color: #364abc;
-  background: linear-gradient(130deg, #364abc 0%, #1f9363 100%);
+  background-color: rgb(54, 74, 188);
+  background: linear-gradient(130deg, rgb(54, 74, 188) 0%, rgb(31, 147, 99) 100%);
   -webkit-box-shadow: 0px 20px 40px 0px rgba(39, 122, 128, 0.5);
   -moz-box-shadow: 0px 20px 40px 0px rgba(39, 122, 128, 0.5);
   box-shadow: 0px 20px 40px 0px rgba(39, 122, 128, 0.5);
@@ -834,8 +834,8 @@ footer .footer__bottom .minzdrav:before {
   background-color: #ebebeb;
 }
 .but_next_prev.active {
-  background-color: #364abc;
-  background: linear-gradient(130deg, #364abc 0%, #1f9363 100%);
+  background-color: rgb(54, 74, 188);
+  background: linear-gradient(130deg, rgb(54, 74, 188) 0%, rgb(31, 147, 99) 100%);
 }
 .but_next_prev > span {
   display: block;
@@ -887,7 +887,6 @@ footer .footer__bottom .minzdrav:before {
   height: 0px;
   width: 25%;
   top: -1px;
-  cursor: pointer;
 }
 
 .catalog_product {
@@ -1008,8 +1007,8 @@ footer .footer__bottom .minzdrav:before {
   background-image: url("data:image/svg+xml,%3Csvg width='26' height='22' viewBox='0 0 26 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.5146 0.142536C10.9882 0.426684 11.1418 1.04094 10.8576 1.51452L7.76625 8.00018H18.2338L15.1424 1.51452C14.8582 1.04094 15.0118 0.426684 15.4854 0.142536C15.9589 -0.141612 16.5732 0.0119531 16.8573 0.485533L20.5661 8.00018H24C25.1046 8.00018 26 8.89561 26 10.0002C26 11.1048 25.1046 12.0002 24 12.0002H23.7143L22.4906 18.5659C22.2091 20.5365 20.5214 22.0002 18.5308 22.0002H7.46918C5.47858 22.0002 3.7909 20.5365 3.50938 18.5659L2.28571 12.0002H2C0.89543 12.0002 0 11.1048 0 10.0002C0 8.89561 0.89543 8.00018 2 8.00018H5.43387L9.14266 0.485533C9.42681 0.0119531 10.0411 -0.141612 10.5146 0.142536Z' fill='url(%23paint0_linear_47_8075)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_47_8075' x1='-1.05193e-07' y1='0.000136165' x2='25.4641' y2='22.6039' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23364ABC'/%3E%3Cstop offset='1' stop-color='%231F9363'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
 }
 .catalog_product .catalog_product__actions .incart:hover {
-  background-color: #364abc;
-  background: linear-gradient(130deg, #364abc 0%, #1f9363 100%);
+  background-color: rgb(54, 74, 188);
+  background: linear-gradient(130deg, rgb(54, 74, 188) 0%, rgb(31, 147, 99) 100%);
 }
 .catalog_product .catalog_product__actions .incart:hover:after {
   background-image: url("data:image/svg+xml,%3Csvg width='26' height='22' viewBox='0 0 26 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.5146 0.142506C10.9882 0.426654 11.1418 1.04091 10.8576 1.51449L7.76625 8.00015H18.2338L15.1424 1.51449C14.8582 1.04091 15.0118 0.426654 15.4854 0.142506C15.9589 -0.141643 16.5732 0.0119225 16.8573 0.485503L20.5661 8.00015H24C25.1046 8.00015 26 8.89558 26 10.0002C26 11.1047 25.1046 12.0002 24 12.0002H23.7143L22.4906 18.5658C22.2091 20.5364 20.5214 22.0002 18.5308 22.0002H7.46918C5.47858 22.0002 3.7909 20.5364 3.50938 18.5658L2.28571 12.0002H2C0.89543 12.0002 0 11.1047 0 10.0002C0 8.89558 0.89543 8.00015 2 8.00015H5.43387L9.14266 0.485503C9.42681 0.0119225 10.0411 -0.141643 10.5146 0.142506Z' fill='%23F6F6F6'/%3E%3C/svg%3E");
@@ -1022,32 +1021,52 @@ footer .footer__bottom .minzdrav:before {
   border-radius: 1.25em;
   position: relative;
 }
-.banner .banner_content {
+.banner > ul {
+  display: block;
   position: absolute;
+  list-style: none;
+  height: 100%;
+  width: 200%;
+  margin: 0;
+  padding: 0;
+  left: 0;
+}
+.banner > ul > li {
+  position: relative;
+  float: left;
+  height: 100%;
+  text-align: center;
+  vertical-align: middle;
+}
+.banner > ul > li .banner_content {
+  position: absolute;
+  text-align: left;
   left: 2em;
   top: 2em;
   color: #fff;
   width: 29em;
 }
-.banner .banner_content h1 {
+.banner > ul > li .banner_content h1 {
   font-size: 2.625em;
   font-weight: 800;
 }
-.banner .banner_content p {
+.banner > ul > li .banner_content p {
   font-size: 1.25em;
   line-height: 1.4em;
   font-weight: 400;
 }
-.banner img {
-  width: initial;
+.banner > ul > li img {
+  width: 100%;
   height: 100%;
 }
-.banner .button_arrow {
+
+.button_arrow {
   position: absolute;
   left: 2em;
   bottom: 2em;
 }
-.banner .banner_navigation {
+
+.banner_navigation {
   position: absolute;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
@@ -1061,8 +1080,15 @@ footer .footer__bottom .minzdrav:before {
   bottom: 2em;
   background-color: #fff;
   font-size: 0.875em;
+  z-index: 100;
 }
 
+.offers {
+  width: 100%;
+  overflow: hidden;
+  height: 45em;
+  position: relative;
+}
 .offers .offers_header {
   display: grid;
   grid-template-columns: 6fr 1fr 2fr;
@@ -1078,7 +1104,7 @@ footer .footer__bottom .minzdrav:before {
   font-weight: 700;
 }
 .offers .offers_list {
-  overflow: hidden;
+  position: absolute;
 }
 .offers .offers_list li {
   display: inline-block;
@@ -1150,8 +1176,8 @@ footer .footer__bottom .minzdrav:before {
   border-radius: 2em;
   padding: 0 1em;
   color: #fff;
-  background-color: #364abc;
-  background: linear-gradient(130deg, #364abc 0%, #1f9363 100%);
+  background-color: rgb(54, 74, 188);
+  background: linear-gradient(130deg, rgb(54, 74, 188) 0%, rgb(31, 147, 99) 100%);
   margin-right: 1.1em;
   cursor: pointer;
 }
@@ -1295,8 +1321,8 @@ footer .footer__bottom .minzdrav:before {
   background-image: url("data:image/svg+xml,%3Csvg width='26' height='22' viewBox='0 0 26 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.5146 0.142536C10.9882 0.426684 11.1418 1.04094 10.8576 1.51452L7.76625 8.00018H18.2338L15.1424 1.51452C14.8582 1.04094 15.0118 0.426684 15.4854 0.142536C15.9589 -0.141612 16.5732 0.0119531 16.8573 0.485533L20.5661 8.00018H24C25.1046 8.00018 26 8.89561 26 10.0002C26 11.1048 25.1046 12.0002 24 12.0002H23.7143L22.4906 18.5659C22.2091 20.5365 20.5214 22.0002 18.5308 22.0002H7.46918C5.47858 22.0002 3.7909 20.5365 3.50938 18.5659L2.28571 12.0002H2C0.89543 12.0002 0 11.1048 0 10.0002C0 8.89561 0.89543 8.00018 2 8.00018H5.43387L9.14266 0.485533C9.42681 0.0119531 10.0411 -0.141612 10.5146 0.142536Z' fill='url(%23paint0_linear_47_8075)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_47_8075' x1='-1.05193e-07' y1='0.000136165' x2='25.4641' y2='22.6039' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23364ABC'/%3E%3Cstop offset='1' stop-color='%231F9363'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
 }
 .header_menu_panel .header_menu_panel__list > li .sub_menu .sub_menu__special_offer .incart:hover {
-  background-color: #364abc;
-  background: linear-gradient(130deg, #364abc 0%, #1f9363 100%);
+  background-color: rgb(54, 74, 188);
+  background: linear-gradient(130deg, rgb(54, 74, 188) 0%, rgb(31, 147, 99) 100%);
 }
 .header_menu_panel .header_menu_panel__list > li .sub_menu .sub_menu__special_offer .incart:hover:after {
   background-image: url("data:image/svg+xml,%3Csvg width='26' height='22' viewBox='0 0 26 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.5146 0.142506C10.9882 0.426654 11.1418 1.04091 10.8576 1.51449L7.76625 8.00015H18.2338L15.1424 1.51449C14.8582 1.04091 15.0118 0.426654 15.4854 0.142506C15.9589 -0.141643 16.5732 0.0119225 16.8573 0.485503L20.5661 8.00015H24C25.1046 8.00015 26 8.89558 26 10.0002C26 11.1047 25.1046 12.0002 24 12.0002H23.7143L22.4906 18.5658C22.2091 20.5364 20.5214 22.0002 18.5308 22.0002H7.46918C5.47858 22.0002 3.7909 20.5364 3.50938 18.5658L2.28571 12.0002H2C0.89543 12.0002 0 11.1047 0 10.0002C0 8.89558 0.89543 8.00015 2 8.00015H5.43387L9.14266 0.485503C9.42681 0.0119225 10.0411 -0.141643 10.5146 0.142506Z' fill='%23F6F6F6'/%3E%3C/svg%3E");
@@ -1354,8 +1380,8 @@ footer .footer__bottom .minzdrav:before {
 }
 .sub_menu__filters .sub_menu__filters_prices ul li.active {
   color: #fff;
-  background-color: #364abc;
-  background: linear-gradient(130deg, #364abc 0%, #1f9363 100%);
+  background-color: rgb(54, 74, 188);
+  background: linear-gradient(130deg, rgb(54, 74, 188) 0%, rgb(31, 147, 99) 100%);
 }
 .sub_menu__filters .sub_menu__filters_prices ul li.disabled {
   color: #8d8d8d;
