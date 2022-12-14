@@ -1,0 +1,61 @@
+.but_next_prev {
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 2em;
+    margin: 0 0.4em;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #ebebeb;
+    }
+
+    &.active {
+        @include main_gradient;
+    }
+
+    & > span {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    &.prev {
+        & > span {
+            @include icon_arrow_prev_gradient;
+        }
+
+        &.disabled {
+            & > span {
+                @include icon_arrow_prev_grey;
+            }
+        }
+
+        &.active {
+            & > span {
+                @include icon_arrow_prev_white;
+            }
+        }
+    }
+
+    &.next {
+
+        & > span {
+            @include icon_arrow_next_gradient;
+        }
+
+        &.disabled {
+            & > span {
+                @include icon_arrow_next_grey;
+            }
+        }
+
+        &.active {
+            & > span {
+                @include icon_arrow_next_white;
+            }
+        }
+    }
+
+}

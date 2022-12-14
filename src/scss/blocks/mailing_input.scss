@@ -1,0 +1,31 @@
+.mailing_input {
+    position: relative;
+    width: 17.5em;
+    height: 3.125em;
+    line-height: 3.125em;
+    border: 1px solid $text_color;
+    border-radius: 2em;
+
+    input {
+        font-size: 1.125em;
+        font-weight: 300;
+        color: $text_color;
+        margin-left: 1em;
+        border: none;
+        background-color: transparent;
+    }
+
+    button {
+        position: absolute;
+        width: 3.125em;
+        height: 3.125em;
+        right: 0;
+        cursor: pointer;
+        border: none;
+        background-color: $text_color;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 2em;
+        @include icon_send;
+    }
+}

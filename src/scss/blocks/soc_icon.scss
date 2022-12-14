@@ -1,0 +1,21 @@
+.soc_icon {
+    width: 3.125em;
+    height: 3.125em;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid $text_color;
+    border-radius: 2em;
+
+    &:hover {
+        background-color: #ebebeb;
+    }
+
+    &.whatsapp {
+        @include icon_whatsapp;
+    }
+
+    &.telegram {
+        @include icon_telegram;
+    }
+}

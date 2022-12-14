@@ -1,0 +1,235 @@
+header {
+
+    .header_top_panel {
+        font-size: 0.875em;
+        color: #8d8d8d;
+        text-align: right;
+        padding: 1.25em 0;
+
+        a {
+            text-decoration: none;
+            color: #8d8d8d;
+
+            &:hover {
+                color: $text_color;
+            }
+        }
+
+        .header_top_panel__city {
+            display: inline-block;
+
+            & > div {
+                display: inline-block;
+                margin-right: 2.85em;
+            }
+
+            &:after {
+                content: "";
+                height: 3px;
+                width: 3px;
+                border: 1px solid #8d8d8d;
+                border-radius: 50%;
+                display: inline-block;
+            }
+        }
+
+        .header_top_panel__menu {
+            display: inline-block;
+
+            li {
+                margin-left: 2.85em;
+                display: inline-block;
+            }
+        }
+    }
+
+    .header_search_panel {
+        display: grid;
+        grid-template-columns: 1fr 5fr 3fr 2fr;
+        align-items: center;
+        gap: 2.5em;
+
+        .header_search_panel__input {
+            position: relative;
+            border: 1px solid #cdcdcd;
+            border-radius: 2em;
+            height: 3.125em;
+            line-height: 3.125em;
+
+            &:hover {
+                border-color: #8D8D8D;
+            }
+
+            
+            &:has(input:focus) {
+                border-color: #8D8D8D;
+            }
+
+            input {
+                color: #8D8D8D;
+                font-size: 1.125em;
+                background: transparent;
+                padding-left: 1em;
+                border: none;
+                width: 90%;
+
+                &:focus {
+                    color: $text_color;
+                }
+            }
+
+            button {
+                position: absolute;
+                right: 15px;
+                top: 15px;
+                border: none;
+                background-color: transparent;
+                width: 18px;
+                height: 18px;
+                @include icon_search_grey;
+                padding: 3px 0.75em;
+                cursor: pointer;
+            }
+        }
+
+        .header_search_panel__store {
+            position: relative;
+            border: 1px solid #333333;
+            border-radius: 2em;
+            height: 3.125em;
+            line-height: 3.125em;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #ebebeb;
+            }
+
+            &.active {
+                color: #fff;
+                background-color: $text_color;
+
+                .icon {
+                    @include icon_navy_white;
+                }
+            }
+
+            &.selected {
+                border-radius: 2em;
+                background: linear-gradient(#f6f6f6, #f6f6f6) padding-box,
+                linear-gradient(to right, #1F9363, #364ABC) border-box;
+                border: 1px solid transparent;
+
+                .text {
+                    background: -webkit-linear-gradient(126.91deg,  #1F9363, #364ABC);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+
+                .icon {
+                    @include icon_navy_gradient;
+                }
+            }
+
+            .text {
+                padding-left: 1em;
+                font-size: 1.125em;
+            }
+
+            .icon {
+                position: absolute;
+                right: 15px;
+                top: 15px;
+                border: none;
+                width: 21px;
+                height: 21px;
+                @include icon_navy_grey;
+                background-repeat: no-repeat;
+            }
+        }
+
+        .header_search_panel__actions {
+            text-align: right;
+
+            .header_search_panel__actions__button {
+                display: inline-block;
+                position: relative;
+                cursor: pointer;
+                width: 3.125em;
+                height: 3.125em;
+                border-radius: 2em;
+                background-color: #fff;
+                margin-left: 0.625em;
+
+                &:after {
+                    content: "";
+                    display: block;
+                    width: 50px;
+                    height: 50px;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+
+                &.heart {
+                    &:after {
+                        content: "";
+                        @include icon_heart_gradient;
+                    }
+                }
+
+                &.cart {
+                    &:after {
+                        content: "";
+                        @include icon_cart_gradient;
+                    }
+                }
+
+                &.personal {
+                    &:after {
+                        content: "";
+                        @include icon_personal_gradient;
+                    }
+                }
+
+                &:hover {
+                    background-color: #ebebeb;
+                }
+
+                &.active {
+                    @include main_gradient;
+                    
+                    &.heart {
+                        &:after {
+                            content: "";
+                            @include icon_heart_white;
+                        }
+                    }
+    
+                    &.cart {
+                        &:after {
+                            content: "";
+                            @include icon_cart_white;
+                        }
+                    }
+    
+                    &.personal {
+                        &:after {
+                            content: "";
+                            @include icon_personal_white;
+                        }
+                    }
+                }
+
+                & > span {
+                    position: absolute;
+                    font-size: 10px;
+                    font-weight: 700;
+                    right: -2px;
+                    color: #fff;
+                    background-color: $text_color;
+                    border-radius: 10px;
+                    padding: 3px 4px 2px 3px;
+                }
+            }
+        }
+    }
+}

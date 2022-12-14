@@ -1,0 +1,21 @@
+.button_arrow {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    position: relative;
+    text-align: left;
+    cursor: pointer;
+
+    &:after {
+        content: "";
+        @include icon_arrow_white;
+        width: 42px;
+        height: 16px;
+        right: 0;
+        top: 3px;
+        position: relative;
+        display: inline-block;
+        margin-left: 1.25em;
+    }
+}

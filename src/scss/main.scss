@@ -1,0 +1,23 @@
+@import "vendor/normalize";
+
+@import "settings";
+@import "fonts";
+@import "mixins/icons";
+@import "mixins/gradients";
+@import "general";
+
+@import "layouts/header";
+@import "layouts/mainpage";
+@import "layouts/footer";
+
+@import "blocks/button_arrow";
+@import "blocks/but_next_prev";
+@import "blocks/progress_bar";
+@import "blocks/catalog_product";
+@import "blocks/banner";
+@import "blocks/offers";
+@import "blocks/soc_icon";
+@import "blocks/mailing_input";
+@import "blocks/header_menu_panel";
+@import "blocks/submenu_filters";
+@import "blocks/burger";

@@ -1,0 +1,28 @@
+.progress_bar {
+    display: grid;
+    grid-template-columns: 4fr 1fr 1fr;
+    gap: 0.1em;
+    align-items: center;
+    justify-items: center;
+    height: 3.125em;
+    background-color: #fff;
+    border-radius: 2em;
+
+    .progress_bar__line {
+        position: relative;
+        border: 1px solid #ebebeb;
+        background-color: #ebebeb;
+        height: 0px;
+        width: 75%;
+
+        .progress_bar__line_slider {
+            position: absolute;
+            border: 1px solid $text_color;
+            background-color: $text_color;
+            height: 0px;
+            width: 25%;
+            top: -1px;
+            cursor: pointer;
+        }
+    }
+}

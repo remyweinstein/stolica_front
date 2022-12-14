@@ -1,0 +1,53 @@
+.banner {
+    max-width: 59.375em;
+    height: 28.125em;
+    overflow: hidden;
+    border-radius: 1.25em;
+    position: relative;
+    
+    .banner_content {
+        position: absolute;
+        left: 2em;
+        top: 2em;
+        color: #fff;
+        width: 29em;
+
+        h1 {
+            font-size: 2.625em;
+            font-weight: 800;
+        }
+
+        p {
+            font-size: 1.25em;
+            line-height: 1.4em;
+            font-weight: 400;
+        }
+    }
+
+    img {
+        width: initial;
+        height: 100%;
+    }
+
+    .button_arrow {
+        position: absolute;
+        left: 2em;
+        bottom: 2em;
+    }
+
+    .banner_navigation {
+        position: absolute;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        gap: 0.1em;
+        align-items: center;
+        justify-items: center;
+        border-radius: 2em;
+        height: 3.125em;
+        line-height: 3.125em;
+        right: 1.2em;
+        bottom: 2em;
+        background-color: #fff;
+        font-size: 0.875em;
+    }
+}
