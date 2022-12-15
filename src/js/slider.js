@@ -58,27 +58,17 @@
       };
 
       const _moveSlide = (x) => {
-        const bigScale = widthObject / widthWrapper;
-        const smallScale = widthSlide / widthLine;
-
-        const leftScale = widthSlide / widthWrapper;
-        
-        slide.el.style.left = -x * scale + 'px';
-        //line
-        //widthLine
-        //slide
-        //widthSlide
+        slide.el.style.left = (-x * widthSlide * widthObject) / (widthWrapper * widthLine * 4) + 'px';
       };
 
       let timer;
 
       const moveUl = (x) => {
-        const curr = oUL.el.style.left.replace(/[^0-9-]+/g, "")*1;
-
         _checkDisableButton(x);
         _moveSlide(x);
 
         timer = setInterval(function() {
+          const curr = oUL.el.style.left.replace(/[^0-9-]+/g, "")*1;
           let stop = true;
           let speed = (x - curr) / 8;
   
