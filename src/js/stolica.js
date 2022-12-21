@@ -8,16 +8,16 @@ const S = function (s, p) {
             /^\[object (HTMLCollection|NodeList|Object)\]$/.test(stringRepr) &&
             (typeof nodes.length === 'number') &&
             (nodes.length === 0 || (typeof nodes[0] === 'object' && nodes[0].nodeType > 0));
-    };
+    }
     this.isNode = (obj) => {
         return obj && obj.nodeType ? true : false;
-    };
+    }
     this.isDocument = (obj) => {
         return obj instanceof Document || obj instanceof Window;
-    };
+    }
     this.isclass = (cl) => {
         return this.els[0].classList.contains(cl);
-    };
+    }
     this.defineEls = () => {
         if (this.isNode(s) || this.isDocument(s)) {
             return [s];
@@ -32,10 +32,10 @@ const S = function (s, p) {
         }
 
         return this.isNode(p) ? p.querySelectorAll(s) : d.querySelectorAll(s);
-    };
+    }
     this.defineEl = () => {
         return this.els[0];
-    };
+    }
     this.els = this.defineEls(),
     this.el = this.defineEl(),
     this.on = (type, s, fn, except) => {
@@ -72,7 +72,7 @@ const S = function (s, p) {
         });
 
         return this;
-    };
+    }
     this.strToNode = (h) => {
         let terk;
 
@@ -89,7 +89,7 @@ const S = function (s, p) {
         this.el = terk[0];
 
         return this;
-    };
+    }
     this.css = function(style, value) {
         if (!value && value!=='') {
           return this.els[0].style[style];
@@ -100,7 +100,7 @@ const S = function (s, p) {
         }
         
         return this;
-    };
+    }
     this.data = (data, value) => {
         if (!value && value!=='') {
           if (this.els[0].dataset) {
@@ -119,7 +119,7 @@ const S = function (s, p) {
         }
         
         return this;
-    };
+    }
     this.attr = (attr, value) => {
         if (!value) {
             return this.el.getAttribute(attr);
@@ -130,24 +130,24 @@ const S = function (s, p) {
         });
 
         return this;
-    };
+    }
     this.create = (tag) => {
         const el = d.createElement(tag);
         this.els = [el];
         this.el = el;
 
         return this;
-    };
+    }
     this.append = (el) => {
         this.el.append(el.el);
-    };
+    }
     this.style = (st, val) => {
         this.els.forEach((el) => {
             el.style[st] = val;
         });
 
         return this;
-    };
+    }
     this.addclass = (cls) => {
         if (!cls) {
             return;
@@ -164,14 +164,14 @@ const S = function (s, p) {
         });
 
         return this;
-    };
+    }
     this.togclass = (cl) => {
         this.els.forEach((el) => {
             el.classList.toggle(cl);
         });
 
         return this;
-    };
+    }
     this.delclass = (cls) => {
         if (!Array.isArray(cls)) {
             cls = [cls];
@@ -184,7 +184,7 @@ const S = function (s, p) {
         });
 
         return this;
-    };
+    }
     this.remove = (el) => {
         let elem = el.el;
 
@@ -193,18 +193,18 @@ const S = function (s, p) {
         }
         
         return this;
-    };
+    }
     this.delStor = (key) => {
         localStorage.removeItem(key);
         return this;
-    };
+    }
     this.setStor = (key, val) => {
         localStorage.setItem(key, val);
         return this;
-    };
+    }
     this.getStor = (key) => {
         return localStorage.getItem(key);
-    };
+    }
     this.bind = (type, fn) => {
         let addEvent;
 
@@ -233,7 +233,7 @@ const S = function (s, p) {
         }
 
         return this;
-    };
+    }
     this.html = (html) => {
         if (html !== '' && !html) {
             return this.els[0].innerHTML;
@@ -244,7 +244,7 @@ const S = function (s, p) {
         });
 
         return this;
-    };
+    }
     this.text = (text) => {
         if (text !== '' && !text) {
             return this.els[0].innerText;
@@ -255,7 +255,7 @@ const S = function (s, p) {
         });
 
         return this;
-    };
+    }
     this.val = (value) => {
         if (value !== '' && !value) {
             return this.els[0].value;
@@ -266,7 +266,7 @@ const S = function (s, p) {
         });
 
         return this;
-    };
+    }
 
     if (this instanceof S) {
         return this.S;

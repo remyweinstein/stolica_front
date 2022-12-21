@@ -1,0 +1,18 @@
+.filter_sort {
+    height: 3.125em;
+    line-height: 3.125em;
+    border: 1px solid #cdcdcd;
+    border-radius: 2em;
+    position: relative;
+
+    &:after {
+        content: "Ая";
+        position: absolute;
+        left: 18%;
+        width: 63%;
+        display: block;
+        @include icon_refresh_grey;
+        background-position: center right;
+        background-repeat: no-repeat;
+    }
+}

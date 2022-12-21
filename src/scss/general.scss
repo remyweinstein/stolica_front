@@ -44,3 +44,29 @@ img {
 p {
     margin: 0;
 }
+
+@media (max-width: $wrapper_width) {
+    .wrapper {
+        padding: 0 0.5em;
+    }
+}
+
+@media (max-width: $tablet_width) {
+    html, body {
+        font-size: 0.95em;
+    }
+    
+    .wrapper {
+        padding: 0 1em;
+    }
+}
+
+@media (max-width: $mobile_width) {
+    main {
+        margin-top: 0;
+    }
+
+    .wrapper {
+        padding: 1em; 
+    }
+}

@@ -12,7 +12,8 @@
 
   <link rel="apple-touch-icon" href="icon.png">
   <link rel="stylesheet" href="css/main.min.css">
-  <script type="text/javascript" async="" src="js/built.js"></script>
+  <script type="text/javascript" src="https://api-maps.yandex.ru/2.1/?apikey=7a895d82-a17c-4fbd-8849-04120c71e5ae&lang=ru_RU" defer></script>
+  <script type="text/javascript" src="js/built.js" defer></script>
   <meta name="theme-color" content="#dfdfdf">
 </head>
 <body>
@@ -31,7 +32,7 @@
       </div>
       <div class="header_search_panel">
         <img src="assets/logo/logo_146.png" alt="Столица" />
-        <div class="header_search_panel__input">
+        <div class="search__input">
           <input type="text" name="search" value="" />
           <button></button>
         </div>
@@ -40,12 +41,14 @@
           <span class="icon"></span>
         </div>
         <div class="header_search_panel__actions">
-          <div class="header_search_panel__actions__button heart"><span>10</span></div>
-          <div class="header_search_panel__actions__button cart"></div>
-          <div class="header_search_panel__actions__button personal"></div>
+          <div class="actions_button search"></div>
+          <div class="actions_button heart"><span>10</span></div>
+          <div class="actions_button cart"><span>3</span></div>
+          <div class="actions_button personal"></div>
         </div>
       </div>
       <div class="header_menu_panel">
+        <img src="assets/logo/logo_146.png" alt="Столица">
         <div class="header_menu_panel__burger">
           <span>Каталог</span>
           <span class="burger">
@@ -55,19 +58,19 @@
             <span></span>
           </span>
           <ul>
-            <li><a href="#">Вино</a></li>
-            <li><a href="#">Шампанское и игристое</a></li>
-            <li><a href="#">Виски</a></li>
-            <li><a href="#">Коньяк</a></li>
-            <li><a href="#">Водка</a></li>
-            <li><a href="#">Пиво</a></li>
-            <li><a href="#">Прочий алкоголь</a></li>
-            <li><a href="#">Безалкогольные напитки</a></li>
-            <li><a href="#">Продукты</a></li>
+            <li><a href="#" onclick="return false">Вино</a></li>
+            <li><a href="#" onclick="return false">Шампанское и игристое</a></li>
+            <li><a href="#" onclick="return false">Виски</a></li>
+            <li><a href="#" onclick="return false">Коньяк</a></li>
+            <li><a href="#" onclick="return false">Водка</a></li>
+            <li><a href="#" onclick="return false">Пиво</a></li>
+            <li><a href="#" onclick="return false">Прочий алкоголь</a></li>
+            <li><a href="#" onclick="return false">Безалкогольные напитки</a></li>
+            <li><a href="#" onclick="return false">Продукты</a></li>
           </ul>
         </div>
         <ul class="header_menu_panel__list">
-          <li><a href="#">Вино</a>
+          <li><a href="#" onclick="return false">Вино</a>
             <div class="sub_menu">
               <div class="sub_menu_wrapper">
                 <div class="sub_menu__filters">
@@ -147,7 +150,7 @@
               </div>
             </div>  
           </li>
-          <li><a href="#">Шампанское и игристое</a>
+          <li><a href="#" onclick="return false">Шампанское и игристое</a>
             <div class="sub_menu">
               <div class="sub_menu_wrapper">
                 <div class="sub_menu__filters">
@@ -222,19 +225,110 @@
               </div>
             </div>  
           </li>
-          <li><a href="#">Виски</a></li>
-          <li><a href="#">Коньяк</a></li>
-          <li><a href="#">Водка</a></li>
-          <li><a href="#">Пиво</a></li>
-          <li><a href="#">Прочий алкоголь</a></li>
-          <li><a href="#">Безалкогольные напитки</a></li>
-          <li><a href="#">Продукты</a></li>
+          <li><a href="#" onclick="return false">Виски</a></li>
+          <li><a href="#" onclick="return false">Коньяк</a></li>
+          <li><a href="#" onclick="return false">Водка</a></li>
+          <li><a href="#" onclick="return false">Пиво</a></li>
+          <li><a href="#" onclick="return false">Прочий алкоголь</a></li>
+          <li><a href="#" onclick="return false">Безалкогольные напитки</a></li>
+          <li><a href="#" onclick="return false">Продукты</a></li>
         </ul>
+        <div class="header_menu_panel__actions">
+          <div class="search__input">
+            <input type="text" name="search" value="">
+            <button></button>
+          </div>
+          <div class="actions_button search"></div>
+          <div class="actions_button heart"><span>10</span></div>
+          <div class="actions_button cart"><span>3</span></div>
+          <div class="actions_button personal"></div>  
+        </div>
       </div>
+      <div class="cart_popup">
+        <div class="cart_popup__products">
+          <div class="cart_popup__product">
+            <div class="cart_popup__product_img">
+              <img src="assets/products/product_1.png" alt="product_1" />
+            </div>
+            <div>
+              <p class="cart_popup__product_name"><span>Грузия</span>Винный напиток, белый, сладкий, газированн...   0,75 л</p>
+              <p class="cart_popup__product_title">Вилла Бланка Москато</p>
+            </div>
+            <div class="cart_popup__product_qty">
+              <span>1 шт.</span>
+            </div>
+            <div class="cart_popup__product_price">
+              <div>544 ₽<span>900 ₽</span></div>
+              <span class="delete_popup_cart">Удалить<span></span></span>
+            </div>
+          </div>          <div class="cart_popup__product">
+            <div class="cart_popup__product_img">
+              <img src="assets/products/product_1.png" alt="product_1" />
+            </div>
+            <div>
+              <p class="cart_popup__product_name"><span>Грузия</span>Винный напиток, белый, сладкий, газированн...   0,75 л</p>
+              <p class="cart_popup__product_title">Вилла Бланка Москато</p>
+            </div>
+            <div class="cart_popup__product_qty">
+              <span>1 шт.</span>
+            </div>
+            <div class="cart_popup__product_price">
+              <div>544 ₽<span>900 ₽</span></div>
+              <span class="delete_popup_cart">Удалить<span></span></span>
+            </div>
+          </div>          <div class="cart_popup__product">
+            <div class="cart_popup__product_img">
+              <img src="assets/products/product_1.png" alt="product_1" />
+            </div>
+            <div>
+              <p class="cart_popup__product_name"><span>Грузия</span>Винный напиток, белый, сладкий, газированн...   0,75 л</p>
+              <p class="cart_popup__product_title">Вилла Бланка Москато</p>
+            </div>
+            <div class="cart_popup__product_qty">
+              <span>1 шт.</span>
+            </div>
+            <div class="cart_popup__product_price">
+              <div>544 ₽<span>900 ₽</span></div>
+              <span class="delete_popup_cart">Удалить<span></span></span>
+            </div>
+          </div>
+        </div>
+        <div class="cart_popup__sum">
+          <p class="cart_popup__sum_head">В корзине <span>3</span> товара на сумму</p>
+          <p class="cart_popup__sum_price">16 582 ₽</p>
+          <p class="cart_popup__sum_old_price">18 544 ₽</p>
+          <a href="#" class="button selected">В корзину</a>
+        </div>
       </div>
     </div>
   </header>
   <main>
+    <div class="overlay">
+      <div class="instock_stores">
+        <div class="instock_stores__cities">
+          <h3>Выберите магазин самовывоза</h3>
+          <ul></ul>
+          <p>Мы покажем ассортимент только по выбранному магазину.</p>
+          <button class="button selected" id="select_store"><span class="text">Применить</span></button>
+          <button class="button" id="close_store"><span class="text">Закрыть</span></button>
+        </div>
+        <div class="instock_stores__stores">
+          <div class="instock_stores__stores_list">
+              <div class="instock_stores__stores_list_filters">
+                <div class="search__input">
+                  <input type="text" name="search" value="">
+                  <button></button>
+                </div>
+                <div class="filter_sort"></div>
+              </div>
+            <ul></ul>
+          </div>
+          <div class="instock_stores__stores_map">
+            <div id="map"></div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="wrapper">
       <div class="mainpage_banners">
         <div class="banner">
@@ -272,12 +366,10 @@
                 вернём бонусами
               </li>
             </ul>
-            <ul>
+            <ul class="one">
               <li><p class="mainpage_banners__adv__header">+2 000 бонусов</p>
                 при регистрации
               </li>
-            </ul>
-            <ul>
               <li><p class="mainpage_banners__adv__header">+1 000 бонусов</p>
                 в День рождения
               </li>
@@ -313,7 +405,7 @@
               <div class="instock">
                 <span>В 20 из 22 магазинах</span>
               </div>
-              <div class="incart"></div>
+              <div class="incart"><div>1</div></div>
             </div>
           </li>
           <li class="catalog_product">
@@ -330,7 +422,7 @@
               <div class="instock">
                 <span>В 20 из 22 магазинах</span>
               </div>
-              <div class="incart"></div>
+              <div class="incart"><div>1</div></div>
             </div>
           </li>          <li class="catalog_product">
             <div class="catalog_product__img">
@@ -346,7 +438,7 @@
               <div class="instock">
                 <span>В 20 из 22 магазинах</span>
               </div>
-              <div class="incart"></div>
+              <div class="incart"><div>1</div></div>
             </div>
           </li>
           <li class="catalog_product">
@@ -363,7 +455,7 @@
               <div class="instock">
                 <span>В 20 из 22 магазинах</span>
               </div>
-              <div class="incart"></div>
+              <div class="incart"><div>1</div></div>
             </div>
           </li>
           <li class="catalog_product">
@@ -380,7 +472,7 @@
               <div class="instock">
                 <span>В 20 из 22 магазинах</span>
               </div>
-              <div class="incart"></div>
+              <div class="incart"><div>1</div></div>
             </div>
           </li>          <li class="catalog_product">
             <div class="catalog_product__img">
@@ -396,7 +488,7 @@
               <div class="instock">
                 <span>В 20 из 22 магазинах</span>
               </div>
-              <div class="incart"></div>
+              <div class="incart"><div>1</div></div>
             </div>
           </li>
           <li class="catalog_product">
@@ -413,7 +505,9 @@
               <div class="instock">
                 <span>В 20 из 22 магазинах</span>
               </div>
-              <div class="incart"></div>
+              <div class="incart">
+                <div>1</div>
+              </div>
             </div>
           </li>
         </ul>
@@ -445,7 +539,7 @@
               <div class="instock">
                 <span>В 20 из 22 магазинах</span>
               </div>
-              <div class="incart"></div>
+              <div class="incart"><div>1</div></div>
             </div>
           </li>
           <li class="catalog_product">
@@ -462,7 +556,7 @@
               <div class="instock">
                 <span>В 20 из 22 магазинах</span>
               </div>
-              <div class="incart"></div>
+              <div class="incart"><div>1</div></div>
             </div>
           </li>
           <li class="catalog_product">
@@ -479,7 +573,7 @@
               <div class="instock">
                 <span>В 20 из 22 магазинах</span>
               </div>
-              <div class="incart"></div>
+              <div class="incart"><div>1</div></div>
             </div>
           </li>          <li class="catalog_product">
             <div class="catalog_product__img">
@@ -495,7 +589,7 @@
               <div class="instock">
                 <span>В 20 из 22 магазинах</span>
               </div>
-              <div class="incart"></div>
+              <div class="incart"><div>1</div></div>
             </div>
           </li>
           <li class="catalog_product">
@@ -512,7 +606,7 @@
               <div class="instock">
                 <span>В 20 из 22 магазинах</span>
               </div>
-              <div class="incart"></div>
+              <div class="incart"><div>1</div></div>
             </div>
           </li>          <li class="catalog_product">
             <div class="catalog_product__img">
@@ -528,7 +622,7 @@
               <div class="instock">
                 <span>В 20 из 22 магазинах</span>
               </div>
-              <div class="incart"></div>
+              <div class="incart"><div>1</div></div>
             </div>
           </li>          <li class="catalog_product">
             <div class="catalog_product__img">
@@ -544,7 +638,7 @@
               <div class="instock">
                 <span>В 20 из 22 магазинах</span>
               </div>
-              <div class="incart"></div>
+              <div class="incart"><div>1</div></div>
             </div>
           </li>
         </ul>
@@ -557,8 +651,9 @@
       <div class="footer__container">
         <div class="footer__contacts">
           <img src="assets/logo/logo_120.png" alt="logo" class="logo" />
-          <p class="footer__contacts_head">Горячая линия</p>
-          <p class="footer__contacts_phone"><a href="tel:88006000401">8 800 6000-401</a></p>
+          <div class="footer__contacts_head">Горячая линия
+            <p class="footer__contacts_phone"><a href="tel:88006000401">8 800 6000-401</a></p>
+          </div>
           <p class="footer__contacts_time">Время работы горячей линии 9:00 – 18:00</p>
         </div>
         <div class="footer__column">
@@ -604,5 +699,819 @@
       </div>
     </div>
   </footer>
+  <script>
+    const Stores = [
+    {
+        "id": 5,
+        "title": "Амурск",
+        "rsa_id": "58",
+        "store_title": "г.Амурск, ул.Строителей,12",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-924-100-20-17",
+        "coordinates": "50.231038, 136.905342"
+    },
+    {
+        "id": 19,
+        "title": "Артём",
+        "rsa_id": "84",
+        "store_title": "г. Артем, ул. Фрунзе,30",
+        "shedule": "с 9-00 до 22-00",
+        "phone": "8 962 584 57 85",
+        "coordinates": "43.348766, 132.157890"
+    },
+    {
+        "id": 6,
+        "title": "Белогорск",
+        "rsa_id": "49",
+        "store_title": "г.Белогорск, ул.Кирова,68",
+        "shedule": "с 11:00 до 21:00",
+        "phone": "8 909 803 73 25",
+        "coordinates": "50.922587, 128.468895"
+    },
+    {
+        "id": 6,
+        "title": "Белогорск",
+        "rsa_id": "47",
+        "store_title": "г.Белогорск, ул.9 Мая,210",
+        "shedule": "с 11:00 до 21:00",
+        "phone": "8 909 806 98 01",
+        "coordinates": "50.908617, 128.551522"
+    },
+    {
+        "id": 6,
+        "title": "Белогорск",
+        "rsa_id": "35",
+        "store_title": "г.Белогорск, ул. Скорикова,17Б",
+        "shedule": "с 11:00 до 21:00",
+        "phone": "8 962 223 24 26",
+        "coordinates": "50.919010, 128.479891"
+    },
+    {
+        "id": 7,
+        "title": "Бикин",
+        "rsa_id": "77",
+        "store_title": "г.Бикин, ул.Гагарина,102",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-963-564-20-04",
+        "coordinates": "46.811962, 134.257118"
+    },
+    {
+        "id": 2,
+        "title": "Биробиджан",
+        "rsa_id": "3",
+        "store_title": "г.Биробиджан, ул.Дзержинского,8",
+        "shedule": "с 11:00 до 22:00",
+        "phone": "8-963-565-43-03",
+        "coordinates": "48.783948, 132.939065"
+    },
+    {
+        "id": 2,
+        "title": "Биробиджан",
+        "rsa_id": "4",
+        "store_title": "г.Биробиджан, ул.Пионерская,86д",
+        "shedule": "с 11:00 до 22:00",
+        "phone": "8-965-673-52-92",
+        "coordinates": "48.799938, 132.888211"
+    },
+    {
+        "id": 2,
+        "title": "Биробиджан",
+        "rsa_id": "5",
+        "store_title": "г.Биробиджан, ул.Шолом-Алейхема,88",
+        "shedule": "с 11:00 до 22:00",
+        "phone": "8-962-227-43-22",
+        "coordinates": "48.802549, 132.901237"
+    },
+    {
+        "id": 3,
+        "title": "Благовещенск",
+        "rsa_id": "28",
+        "store_title": "г.Благовещенск, ул.Ленина,157",
+        "shedule": "с 11-00 до 21-00",
+        "phone": "8 909 857 64 10",
+        "coordinates": "50.258666, 127.528494"
+    },
+    {
+        "id": 3,
+        "title": "Благовещенск",
+        "rsa_id": "29",
+        "store_title": "г.Благовещенск, ул.Калинина,141",
+        "shedule": "с 11-00 до 21-00",
+        "phone": " 8 909 878 60 97",
+        "coordinates": "50.285754, 127.526464"
+    },
+    {
+        "id": 3,
+        "title": "Благовещенск",
+        "rsa_id": "30",
+        "store_title": "г.Благовещенск, ул. Ленина,74",
+        "shedule": "с 11-00 до 21-00",
+        "phone": "8 962 222 16 24",
+        "coordinates": "50.255896, 127.550637"
+    },
+    {
+        "id": 3,
+        "title": "Благовещенск",
+        "rsa_id": "32",
+        "store_title": "г.Благовещенск, ул. Ленина,197",
+        "shedule": "с 11:00 до 21:00",
+        "phone": "8 963 562 95 31",
+        "coordinates": "50.260526, 127.511372"
+    },
+    {
+        "id": 3,
+        "title": "Благовещенск",
+        "rsa_id": "51",
+        "store_title": "г.Благовещенск, ул. Амурская,104",
+        "shedule": "с 11:00 до 21:00",
+        "phone": "8 962 224 05 39",
+        "coordinates": "50.261626, 127.548975"
+    },
+    {
+        "id": 3,
+        "title": "Благовещенск",
+        "rsa_id": "48",
+        "store_title": "г.Благовещенск, ул. Горького,193",
+        "shedule": "с 11:00 до 21:00",
+        "phone": "8 962 678 61 41",
+        "coordinates": "50.268346, 127.515891"
+    },
+    {
+        "id": 3,
+        "title": "Благовещенск",
+        "rsa_id": "93",
+        "store_title": "г. Благовещенск, ул. Октябрьская, 111",
+        "shedule": "с 11:00 до 21:00",
+        "phone": "8 909 878 54 76",
+        "coordinates": "50.269952, 127.552272"
+    },
+    {
+        "id": 3,
+        "title": "Благовещенск",
+        "rsa_id": "50",
+        "store_title": "г. Благовещенск, ул. Игнатьевское шоссе, 14/4",
+        "shedule": "с 11:00 до 21:00",
+        "phone": "8 962 584 04 39",
+        "coordinates": "50.297270, 127.507464"
+    },
+    {
+        "id": 3,
+        "title": "Благовещенск",
+        "rsa_id": "97",
+        "store_title": "г. Благовещенск, ул Кантемирова, 13",
+        "shedule": "с 11:00 до 21:00",
+        "phone": "8 965 674 21 39",
+        "coordinates": "50.300377, 127.523014"
+    },
+    {
+        "id": 3,
+        "title": "Благовещенск",
+        "rsa_id": "37",
+        "store_title": "г.Благовещенск, ул. Игнатьевское шоссе,13",
+        "shedule": "с 11:00 до 21:00",
+        "phone": "8 963 562 93 74 ",
+        "coordinates": "50.294956, 127.515810"
+    },
+    {
+        "id": 3,
+        "title": "Благовещенск",
+        "rsa_id": "42",
+        "store_title": "г. Благовещенск, ул. Ул.Амурская,89",
+        "shedule": "с 11:00 до 21:00",
+        "phone": "8 962 586 53 78 ",
+        "coordinates": "50.261407, 127.555695"
+    },
+    {
+        "id": 21,
+        "title": "Ванино",
+        "rsa_id": "46",
+        "store_title": " п.Ванино, ул.1-я линия,1",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-909-806-99-52",
+        "coordinates": "49.089582, 140.264161"
+    },
+    {
+        "id": 20,
+        "title": "Владивосток",
+        "rsa_id": "72",
+        "store_title": "г. Владивосток, Жигура, 30",
+        "shedule": "с 9-00 до 22-00",
+        "phone": "8 909 804 62 88",
+        "coordinates": "43.129242, 131.922190"
+    },
+    {
+        "id": 8,
+        "title": "Дальнегорск",
+        "rsa_id": "83",
+        "store_title": "г.Дальнегорск, ул. 8 Марта,1а",
+        "shedule": "с 9-00 до 22-00",
+        "phone": "8 909 855 91 96",
+        "coordinates": "44.560409, 135.624192"
+    },
+    {
+        "id": 9,
+        "title": "Зея",
+        "rsa_id": "34",
+        "store_title": "г.Зея, ул. Шохина,12",
+        "shedule": "с 11:00 до 21:00",
+        "phone": "8-962-674-69-80",
+        "coordinates": "53.753688, 127.278627"
+    },
+    {
+        "id": 10,
+        "title": "Комсомольск на Амуре",
+        "rsa_id": "13",
+        "store_title": "г.Комсомольск-на-Амуре, Проспект Ленина,30",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "7-962-677-70-46",
+        "coordinates": "50.550890, 137.008954"
+    },
+    {
+        "id": 10,
+        "title": "Комсомольск на Амуре",
+        "rsa_id": "14",
+        "store_title": "г.Комсомольск-на-Амуре, Проспект Мира,28",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-924-100-40-05",
+        "coordinates": "50.546151, 137.020102"
+    },
+    {
+        "id": 10,
+        "title": "Комсомольск на Амуре",
+        "rsa_id": "11",
+        "store_title": "г.Комсомольск-на-Амуре, Проспект Победы,14",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-909-843-61-34",
+        "coordinates": "50.582764, 137.059942"
+    },
+    {
+        "id": 10,
+        "title": "Комсомольск на Амуре",
+        "rsa_id": "12",
+        "store_title": "г.Комсомольск-на-Амуре, Проспект Октябрьский,21",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-909-873-60-11",
+        "coordinates": "50.541875, 137.011119"
+    },
+    {
+        "id": 10,
+        "title": "Комсомольск на Амуре",
+        "rsa_id": "45",
+        "store_title": "г.Комсомольск-на-Амуре, Проспект Дикопольцева,29/2",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-909-806-99-62",
+        "coordinates": "50.544674, 136.964640"
+    },
+    {
+        "id": 10,
+        "title": "Комсомольск на Амуре",
+        "rsa_id": "64",
+        "store_title": "г.Комсомольск-на-Амуре, Проспект Первостроителей, 19",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-962-225-50-68",
+        "coordinates": "50.541326, 137.004732"
+    },
+    {
+        "id": 10,
+        "title": "Комсомольск на Амуре",
+        "rsa_id": "88",
+        "store_title": "г.Комсомольск-на-Амуре, ул. Аллея Труда, 54",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-963-563-74-91",
+        "coordinates": "50.533253, 137.005451"
+    },
+    {
+        "id": 10,
+        "title": "Комсомольск на Амуре",
+        "rsa_id": "63",
+        "store_title": "г.Комсомольск-на-Амуре, ул. Вокзальная,45",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-962-584-60-66",
+        "coordinates": "50.546747, 136.989550"
+    },
+    {
+        "id": 23,
+        "title": "Лесозаводск",
+        "rsa_id": "102",
+        "store_title": "г.Лесозаводск, ул. Калининская, д 28",
+        "shedule": "с 09-00 до 22-00",
+        "phone": "8-965-674-21-39",
+        "coordinates": "45.465731, 133.394035"
+    },
+    {
+        "id": 11,
+        "title": "Лучегорск",
+        "rsa_id": "70",
+        "store_title": "г.Лучегорск, ул.4-й микрорайон,10В",
+        "shedule": "с 9-00 до 22-00",
+        "phone": "8-909-851-64-45",
+        "coordinates": " \t46.445063, 134.296599"
+    },
+    {
+        "id": 12,
+        "title": "Николаевск на Амуре",
+        "rsa_id": "82",
+        "store_title": "г.Николаевск-на-Амуре, ул.Луначарского,128",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-962-585-29-59",
+        "coordinates": "53.141962, 140.724296"
+    },
+    {
+        "id": 12,
+        "title": "Николаевск на Амуре",
+        "rsa_id": "61",
+        "store_title": "г.Николаевск-на-Амуре, ул.Кантера,20",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-984-283-47-14",
+        "coordinates": "53.139245, 140.719607"
+    },
+    {
+        "id": 13,
+        "title": "Новый Ургал",
+        "rsa_id": "101",
+        "store_title": "рп.Новый Ургал, ул. Артема, 2",
+        "shedule": "c 10-00 до 22-00",
+        "phone": "8-962-151-04-93",
+        "coordinates": "51.074527, 132.608637"
+    },
+    {
+        "id": 22,
+        "title": "Переяславка",
+        "rsa_id": "1",
+        "store_title": "п.Переяславка, ул. Октябрьская,76",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-965-673-53-09",
+        "coordinates": "47.966455, 135.052423"
+    },
+    {
+        "id": 14,
+        "title": "Свободный",
+        "rsa_id": "33",
+        "store_title": "г.Свободный, ул.Ленина,50",
+        "shedule": "с 11:00 до 21:00",
+        "phone": "8 909 807 83 02",
+        "coordinates": "51.372533, 128.138719"
+    },
+    {
+        "id": 14,
+        "title": "Свободный",
+        "rsa_id": "68",
+        "store_title": "г.Свободный, ул.Ленина,72",
+        "shedule": "с 11:00 до 21:00",
+        "phone": "8 963 563 76 51",
+        "coordinates": "51.377952, 128.135926"
+    },
+    {
+        "id": 15,
+        "title": "Советская Гавань",
+        "rsa_id": "2",
+        "store_title": " г.Советская Гавань, ул.Пионерская,12а",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-962-674-68-79",
+        "coordinates": "48.967836, 140.283888"
+    },
+    {
+        "id": 4,
+        "title": "Тында",
+        "rsa_id": "91",
+        "store_title": "г.Тында, ул.Школьная, 19",
+        "shedule": "с 11-00 до 21-00",
+        "phone": "8 909 851 92 16",
+        "coordinates": "55.153786, 124.728427"
+    },
+    {
+        "id": 4,
+        "title": "Тында",
+        "rsa_id": "31",
+        "store_title": "г.Тында, ул.Красная Пресня,68",
+        "shedule": "с 11:00 до 21:00",
+        "phone": "8-965-673-53-08",
+        "coordinates": "55.153900, 124.750292"
+    },
+    {
+        "id": 16,
+        "title": "Уссурийск",
+        "rsa_id": "80",
+        "store_title": "г.Уссурийск, ул.Краснознаменная,145",
+        "shedule": "с 9-00 до 22-00",
+        "phone": "8-962-225-75-65",
+        "coordinates": "43.802484, 131.957934"
+    },
+    {
+        "id": 16,
+        "title": "Уссурийск",
+        "rsa_id": "89",
+        "store_title": "г.Уссурийск, ул.Воровского, 143а",
+        "shedule": "с 9-00 до 22-00",
+        "phone": " 8 909 855 91 39",
+        "coordinates": "43.809771, 131.990237"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "23",
+        "store_title": "г.Хабаровск, ул.Лермонтова,16",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-909-806-06-32",
+        "coordinates": "48.479375, 135.095174"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "24",
+        "store_title": "г.Хабаровск, пр.60-лет Октября,217",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-909-806-06-37",
+        "coordinates": "48.489497, 135.102037"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "25",
+        "store_title": "г.Хабаровск, ул.Большая,97Б",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8 909 806 06 45",
+        "coordinates": "48.508435, 135.074702"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "26",
+        "store_title": "г.Хабаровск, ул.Гагарина,9",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-909-806-06-34",
+        "coordinates": "48.457571, 135.184655"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "27",
+        "store_title": "г.Хабаровск, ул.Калараша, 19А",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-962-222-69-83  ",
+        "coordinates": "48.454290, 135.112835"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "59",
+        "store_title": "г.Хабаровск, ул.Шеронова, 113",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-962-678-56-72",
+        "coordinates": "48.480803, 135.066311"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "81",
+        "store_title": "г.Хабаровск, ул.Волочаевская,87",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-962-224-05-04",
+        "coordinates": "48.469382, 135.079391"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "73",
+        "store_title": "г.Хабаровск, ул.Владивостокская,18",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-909-804-71-51",
+        "coordinates": "48.490907, 135.081394"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "52",
+        "store_title": "г.Хабаровск, ул.Ленина,51",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-909-806-98-11",
+        "coordinates": "48.477153, 135.082777"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "55",
+        "store_title": "г.Хабаровск, ул.ДОС,26",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-962-500-19-93",
+        "coordinates": "48.476777, 135.119114"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "56",
+        "store_title": "г.Хабаровск, ул.Волочаевская,23",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-962-222-09-60",
+        "coordinates": "48.464543, 135.091338"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "54",
+        "store_title": "г.Хабаровск, ул.Флегонтова,4а",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-962-222-18-94",
+        "coordinates": "48.434442, 135.111389"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "53",
+        "store_title": "г.Хабаровск, ул.Брестская,24",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-909-804-10-95",
+        "coordinates": "48.491981, 135.046405"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "65",
+        "store_title": "г.Хабаровск, ул.Павла Морозова,91",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-909-855-25-88",
+        "coordinates": "48.435733, 135.104948"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "66",
+        "store_title": "г.Хабаровск, ул.Кубяка,9",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-909-851-64-07",
+        "coordinates": "48.445858, 135.108766"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "94",
+        "store_title": "г.Хабаровск, ул.Карла Маркса, 105",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8 962 584 04 85",
+        "coordinates": "48.502573, 135.104068"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "79",
+        "store_title": "г.Хабаровск, ул.Ленинградская,18а",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-909-820-41-46",
+        "coordinates": "48.482827, 135.096611"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "38",
+        "store_title": "г.Хабаровск, ул.Республиканская,17",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-965-673-95-60",
+        "coordinates": "48.430060, 135.116869"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "40",
+        "store_title": "г.Хабаровск, ул.Л.Толстого,15",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-962-222-41-86",
+        "coordinates": "48.485676, 135.068647"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "39",
+        "store_title": "г.Хабаровск, ул.Панфиловцев,14",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-962-677-70-33",
+        "coordinates": "48.384096, 135.112089"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "57",
+        "store_title": "г.Хабаровск, ул.Тихоокеанская,191 А",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-962-678-59-01",
+        "coordinates": "48.541946, 135.041563"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "41",
+        "store_title": "г.Хабаровск, пр.60-лет Октября,162",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-909-851-93-16",
+        "coordinates": "48.484004, 135.108083"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "44",
+        "store_title": "г.Хабаровск, ул.Ульяновская,195/3",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-909-804-55-40",
+        "coordinates": "48.367554, 135.038805"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "74",
+        "store_title": "г.Хабаровск, ул.Карла Маркса,91",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-963-568-28-32",
+        "coordinates": "48.497445, 135.097914"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "6",
+        "store_title": "г.Хабаровск, ул.Стрельникова,8а",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-962-674-69-24",
+        "coordinates": "48.535789, 135.038661"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "7",
+        "store_title": "г.Хабаровск, ул.Шелеста,85",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8 962-151-48-45",
+        "coordinates": "48.519333, 135.053124"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "8",
+        "store_title": "г.Хабаровск, пер.Трубный,6",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8 962 500 28 70",
+        "coordinates": "48.459435, 135.092434"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "9",
+        "store_title": "г.Хабаровск, ул.Суворова,44",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8 909-804-13-45",
+        "coordinates": "48.391617, 135.112476"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "10",
+        "store_title": "г.Хабаровск, пер. Ленинградский,13",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-909-820-80-16",
+        "coordinates": "48.494621, 135.074675"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "67",
+        "store_title": "г.Хабаровск, ул.Бойко Павлова,2",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-963­568-28-24",
+        "coordinates": "48.506578, 135.038607"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "76",
+        "store_title": "г.Хабаровск, ул.Амурский б-р,7",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-963-564-20-33",
+        "coordinates": "48.477912, 135.056780"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "85",
+        "store_title": "г. Хабаровск, ул. Дикопольцева, 8",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-965-675-66-85",
+        "coordinates": "48.481836, 135.086640"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "19",
+        "store_title": "г.Хабаровск, ул.Серышева,52",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-965-673-95-65",
+        "coordinates": "48.486882, 135.062547"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "20",
+        "store_title": "г.Хабаровск, ул.Белорусская,2а",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-962-150-42-23",
+        "coordinates": "48.395332, 135.127567"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "21",
+        "store_title": "г.Хабаровск, ул.Калинина,8",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-909-806-97-54",
+        "coordinates": "48.466736, 135.072366"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "87",
+        "store_title": "г.Хабаровск, ул.Гайдара, 13",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-909-850-84-31",
+        "coordinates": "48.486070, 135.071692"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "22",
+        "store_title": "г.Хабаровск, проспект 60-летия октября,84",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-962-678-60-40",
+        "coordinates": "48.432021, 135.130397"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "43",
+        "store_title": "г.Хабаровск, ул.Руднева,69",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-965-673-84-55",
+        "coordinates": "48.570570, 135.041410"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "86",
+        "store_title": "г.Хабаровск, ул.Пионерская, 1/2б",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-963-566-19-68",
+        "coordinates": "48.464107, 135.078070"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "92",
+        "store_title": "г. Хабаровск, ул. Волочаевская, 123",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-962-674-51-32",
+        "coordinates": "48.472429, 135.075178"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "96",
+        "store_title": "Березовка, Квартал 70 лет Октября, 11",
+        "shedule": "с 09-00 до 22-00",
+        "phone": "8-924-221-25-00",
+        "coordinates": "48.556427, 135.112835"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "60",
+        "store_title": "г.Хабаровск, ул.Серышева, 11",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8 963 566 21 14",
+        "coordinates": "48.481961, 135.056430"
+    },
+    {
+        "id": 1,
+        "title": "Хабаровск",
+        "rsa_id": "98",
+        "store_title": "г.Хабаровск, ул.Калараша, 19а",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8 962 222 69 83",
+        "coordinates": "48.454290, 135.112835"
+    },
+    {
+        "id": 17,
+        "title": "Чегдомын",
+        "rsa_id": "95",
+        "store_title": "рп.Чегдомын ул.Центральная, 34",
+        "shedule": "с 10-00 до 22-00",
+        "phone": "8-909-851-93-18",
+        "coordinates": "51.133492, 133.033999"
+    },
+    {
+        "id": 18,
+        "title": "Шимановск",
+        "rsa_id": "36",
+        "store_title": "г.Шимановск, ул. Орджоникидзе,40",
+        "shedule": "с 11:00 до 21:00",
+        "phone": "8 962 674 69 22",
+        "coordinates": "51.995478, 127.666565"
+    }
+];
+  </script>
 </body>
 </html>

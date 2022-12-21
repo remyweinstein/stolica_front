@@ -8,16 +8,16 @@ const S = function (s, p) {
             /^\[object (HTMLCollection|NodeList|Object)\]$/.test(stringRepr) &&
             (typeof nodes.length === 'number') &&
             (nodes.length === 0 || (typeof nodes[0] === 'object' && nodes[0].nodeType > 0));
-    };
+    }
     this.isNode = (obj) => {
         return obj && obj.nodeType ? true : false;
-    };
+    }
     this.isDocument = (obj) => {
         return obj instanceof Document || obj instanceof Window;
-    };
+    }
     this.isclass = (cl) => {
         return this.els[0].classList.contains(cl);
-    };
+    }
     this.defineEls = () => {
         if (this.isNode(s) || this.isDocument(s)) {
             return [s];
@@ -32,10 +32,10 @@ const S = function (s, p) {
         }
 
         return this.isNode(p) ? p.querySelectorAll(s) : d.querySelectorAll(s);
-    };
+    }
     this.defineEl = () => {
         return this.els[0];
-    };
+    }
     this.els = this.defineEls(),
     this.el = this.defineEl(),
     this.on = (type, s, fn, except) => {
@@ -72,7 +72,7 @@ const S = function (s, p) {
         });
 
         return this;
-    };
+    }
     this.strToNode = (h) => {
         let terk;
 
@@ -89,7 +89,7 @@ const S = function (s, p) {
         this.el = terk[0];
 
         return this;
-    };
+    }
     this.css = function(style, value) {
         if (!value && value!=='') {
           return this.els[0].style[style];
@@ -100,7 +100,7 @@ const S = function (s, p) {
         }
         
         return this;
-    };
+    }
     this.data = (data, value) => {
         if (!value && value!=='') {
           if (this.els[0].dataset) {
@@ -119,7 +119,7 @@ const S = function (s, p) {
         }
         
         return this;
-    };
+    }
     this.attr = (attr, value) => {
         if (!value) {
             return this.el.getAttribute(attr);
@@ -130,24 +130,24 @@ const S = function (s, p) {
         });
 
         return this;
-    };
+    }
     this.create = (tag) => {
         const el = d.createElement(tag);
         this.els = [el];
         this.el = el;
 
         return this;
-    };
+    }
     this.append = (el) => {
         this.el.append(el.el);
-    };
+    }
     this.style = (st, val) => {
         this.els.forEach((el) => {
             el.style[st] = val;
         });
 
         return this;
-    };
+    }
     this.addclass = (cls) => {
         if (!cls) {
             return;
@@ -164,14 +164,14 @@ const S = function (s, p) {
         });
 
         return this;
-    };
+    }
     this.togclass = (cl) => {
         this.els.forEach((el) => {
             el.classList.toggle(cl);
         });
 
         return this;
-    };
+    }
     this.delclass = (cls) => {
         if (!Array.isArray(cls)) {
             cls = [cls];
@@ -184,7 +184,7 @@ const S = function (s, p) {
         });
 
         return this;
-    };
+    }
     this.remove = (el) => {
         let elem = el.el;
 
@@ -193,18 +193,18 @@ const S = function (s, p) {
         }
         
         return this;
-    };
+    }
     this.delStor = (key) => {
         localStorage.removeItem(key);
         return this;
-    };
+    }
     this.setStor = (key, val) => {
         localStorage.setItem(key, val);
         return this;
-    };
+    }
     this.getStor = (key) => {
         return localStorage.getItem(key);
-    };
+    }
     this.bind = (type, fn) => {
         let addEvent;
 
@@ -233,7 +233,7 @@ const S = function (s, p) {
         }
 
         return this;
-    };
+    }
     this.html = (html) => {
         if (html !== '' && !html) {
             return this.els[0].innerHTML;
@@ -244,7 +244,7 @@ const S = function (s, p) {
         });
 
         return this;
-    };
+    }
     this.text = (text) => {
         if (text !== '' && !text) {
             return this.els[0].innerText;
@@ -255,7 +255,7 @@ const S = function (s, p) {
         });
 
         return this;
-    };
+    }
     this.val = (value) => {
         if (value !== '' && !value) {
             return this.els[0].value;
@@ -266,7 +266,7 @@ const S = function (s, p) {
         });
 
         return this;
-    };
+    }
 
     if (this instanceof S) {
         return this.S;
@@ -274,6 +274,196 @@ const S = function (s, p) {
         return new S(s, p);
     }
 };
+/*next file*/
+
+(function(S, Stores) {
+    const Instock = function() {
+        const button = S('.header_search_panel__store');
+        const citiesBlock = S('.instock_stores__cities');
+        const storesBlock = S('.instock_stores__stores_list');
+        const citiesUl = S('ul', citiesBlock);
+        const storesUl = S('ul', storesBlock);
+        const overlay = S('.overlay');
+        const buttonSelect = S('#select_store');
+        const buttonClose = S('#close_store');
+        this.ObjectManager;
+        this.store_id = 1;
+
+        const getListCities = () => {
+            return Stores.reduce((acc, item) => {
+                const {id, title} = item;
+
+                if (!acc) acc = [];
+                if (!acc.filter((el) => el.id == id).length) {
+                     return [...acc, {id, title}];
+                } else {
+                    return acc;
+                }
+            }, []);
+        }
+
+        const getListStores = (cityId) => {
+            return Stores.filter(el => el.id == cityId);
+        }
+
+        const openStores = () => {
+            overlay.css('display', 'grid');
+            renderCities();
+        }
+
+        const closeStores = () => {
+            overlay.css('display', 'none');
+            citiesUl.html(' ');
+            storesUl.html(' ');
+        }
+
+        const renderCities = () => {
+            const listCities = getListCities();
+
+            listCities.forEach(city => {
+                const {id, title} = city;
+                const el = S().strToNode(`<li data-id="${id}">${title}</li>`);
+                el.bind('click', selectCity);
+                citiesUl.append(el);
+            });
+
+            renderStores(1);
+        }
+
+        const renderStores = (cityId) => {
+            storesUl.html(' ');
+            S('#map').html(' ');
+            getListStores(cityId).forEach(city => {
+                const {rsa_id, store_title} = city;
+                const address = `${store_title.split(",")[1]}, ${store_title.split(",")[2]}`;
+                const el = S().strToNode(`<li data-id="${rsa_id}">${address}</li>`);
+                el.bind('click', clickStore);
+                storesUl.append(el);
+            });
+            initMap(cityId);
+        }
+
+        const clickStore = (e) => {
+            openBalloon(e.currentTarget.dataset.id);
+        }
+
+        const selectCity = (e) => {
+            renderStores(e.currentTarget.dataset.id);
+        }
+
+        const clickOnMap = (e) => {
+            this.store_id = e.currentTarget.dataset.id;
+            selectStore();
+
+        }
+
+        const selectStore = () => {
+            localStorage.setItem('current_store', this.store_id);
+            closeStores();
+        }
+
+        ymaps.ready(function(){});
+
+        const initMap = (cityId) => {
+            const stores = getListStores(cityId);
+            const x = parseFloat(stores[0].coordinates.split(',')[0]);
+            const y = parseFloat(stores[0].coordinates.split(',')[1]);
+
+            const myMap = new ymaps.Map("map", {
+                center: [x, y],
+                zoom: (stores.length > 3) ? 12 : 14
+            }, {
+                suppressMapOpenBlock: true
+            });
+        
+            this.objectManager = new ymaps.ObjectManager({
+                clusterize: true,
+                gridSize: 32,
+                clusterDisableClickZoom: true
+            });
+        
+            this.objectManager.objects.options.set('preset', 'islands#greenDotIcon');
+            this.objectManager.clusters.options.set('preset', 'islands#greenClusterIcons');
+
+            stores.forEach(store => {
+                const x = parseFloat(store.coordinates.split(',')[0]);
+                const y = parseFloat(store.coordinates.split(',')[1]);
+                this.objectManager.add({
+                    type: 'Feature',
+                    id: store.rsa_id,
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [x, y]
+                    },
+                    properties: {
+                        hintContent: store.store_title,
+                        balloonContent: `<p>${store.store_title}</p><button class="button selected" class="select_from_map" data-id="${store.rsa_id}">Выбрать</button>`,
+                    },
+                    options: {
+                        iconLayout: 'default#image',
+                        iconImageHref: 'assets/icons/inactive_point.png',
+                        iconImageSize: [14, 14],
+                        iconImageOffset: [-7, -7]
+                    }
+                });    
+            });
+
+            this.objectManager.objects.events.add('click', function (e) {
+                openBalloon(e.get('objectId'));
+            });
+
+            myMap.geoObjects.add(this.objectManager);
+        }
+
+        const clearIcons = () => {
+            this.objectManager.objects.getAll().forEach(el => {
+                this.objectManager.objects.setObjectOptions(
+                    el.id,
+                    {
+                        iconImageHref: 'assets/icons/inactive_point.png',
+                        iconImageSize: [14, 14],
+                        iconImageOffset: [-7, -7]
+                    })
+            });
+        }
+
+        const openBalloon = (objectId) => {
+            const objectState = this.objectManager.getObjectState(objectId);
+            if (objectState.isClustered) {
+                this.objectManager.clusters.state.set('activeObject', this.objectManager.objects.getById(objectId));
+                this.objectManager.clusters.balloon.open(objectState.cluster.id);
+            } else {
+                this.objectManager.objects.balloon.open(objectId);
+            }
+            clearIcons();
+            this.objectManager.objects.setObjectOptions(
+                objectId,
+                { 
+                    iconImageHref: 'assets/icons/active_point.png',
+                    iconImageSize: [24, 24],
+                    iconImageOffset: [-12, -12]
+                }
+            );
+        }
+
+        const init = () => {
+            button.bind('click', openStores);
+            overlay.bind('click', closeStores);
+            buttonSelect.bind('click', selectStore);
+            buttonClose.bind('click', closeStores);
+            S('.select_from_map').on('click', document, clickOnMap);
+
+            S('.instock_stores').bind('click', (e) => {
+                e.stopPropagation();
+            });
+        }
+
+        return init();
+    }
+
+    new Instock();  
+  })(S, Stores);
+
 /*next file*/
 
 (function(S) {
@@ -667,7 +857,7 @@ const S = function (s, p) {
       const slide = S(".progress_bar__line_slider", oB);
       const widthSlide = slide.el.offsetWidth;
   
-      let step = 100;
+      let step = 304;
   
       const _fnPrev = (e) => {
         _clearTimer();
@@ -679,7 +869,7 @@ const S = function (s, p) {
         }
 
         moveUl(moveX);
-      };
+      }
   
       const _fnNext = (e) => {
         _clearTimer();
@@ -691,7 +881,7 @@ const S = function (s, p) {
         }
 
         moveUl(moveX);
-      };
+      }
 
       const _checkDisableButton = (x) => {
         const d = "disabled";
@@ -707,11 +897,11 @@ const S = function (s, p) {
         } else {
             oPrev.delclass(d);
         }
-      };
+      }
 
       const _moveSlide = (x) => {
         slide.el.style.left = (-x * widthSlide * widthObject) / (widthWrapper * widthLine * 4) + 'px';
-      };
+      }
 
       let timer;
 
@@ -735,18 +925,18 @@ const S = function (s, p) {
             _clearTimer();
           }
         }, 30);
-      };
+      }
       
       const _clearTimer = () => {
         clearInterval(timer);
         timer = null;
-      };
+      }
 
       const init = () => {
         _touchEvents();
         oPrev.bind('click', (e) => { _fnPrev(e) });
         oNext.bind('click', (e) => { _fnNext(e) });
-      };
+      }
   
       const _touchEvents = () => {
         var startX = 0,
@@ -755,6 +945,7 @@ const S = function (s, p) {
   
         oB.bind('touchend', (e) => {
             if (route) {
+              console.log('route=', route);
               if (Math.abs(route) > 40) {
                 if (route > 0) {
                   _fnNext(e);
@@ -762,20 +953,20 @@ const S = function (s, p) {
                   _fnPrev(e);
                 }
               } else {
-                oUL.css('left', (parseInt(oUL.css('left').replace("px", "")) + route) + 'px');
+                //oUL.css('left', (parseInt(oUL.css('left').replace("px", "")) + route) + 'px');
               }
             }
   
             route  = null;
             lastX  = null;
             startX = 0;
-        });
+        })
   
         oB.bind('touchstart',
           (e) => {
               startX = e.touches[0].pageX;
           }
-        );
+        )
   
         oB.bind('touchmove',
           (e) => {
@@ -789,14 +980,14 @@ const S = function (s, p) {
   
               route = x === 0 ? null : startX - moveX;
   
-              oUL.css('left', (parseInt(oUL.css('left').replace("px", "")) - x) + 'px');
+              //oUL.css('left', (parseInt(oUL.css('left').replace("px", "")) - x) + 'px');
               lastX = moveX;
           }
-        );
-      };
+        )
+      }
       
       return init();
-    };
+    }
     
     S('.offers').els.forEach((el) => {
       new Slider(el);
@@ -805,3 +996,115 @@ const S = function (s, p) {
   })(S);
 /*next file*/
 
+const heightMenu = S('.header_top_panel').el.offsetHeight + S('.header_search_panel').el.offsetHeight;
+const panel = S('.header_menu_panel');
+const submenus = S('.sub_menu');
+const butInCart = S('.incart');
+
+S(document).bind('scroll', () => {
+    if (window.scrollY > heightMenu) {
+        panel.addclass('sticked');
+        submenus.addclass('forstick');
+    } else {
+        panel.delclass('sticked');
+        submenus.delclass('forstick');
+    }
+});
+
+butInCart.bind('click', (e) => {
+    const el = e.currentTarget;
+    const div = el.children[0];
+    const qty = S(div).text();
+    if (S(el.parentElement).isclass('cart')) return;
+    S(el.parentElement).addclass('cart');
+    S(div).html(`<span class="minus">-</span><span class="qty">${qty}</span><span class="plus">+</span>`)
+});
+
+S(document).on('click', '.plus', (e, t) => {
+    const el = t;
+    const parent = S(el.parentElement);
+    const qtyEl = S('.qty', parent);
+    let qty = qtyEl.text()*1 + 1;
+    qtyEl.text(qty);
+});
+
+S(document).on('click', '.minus', (e, t) => {
+    const el = t;
+    const parent = S(el.parentElement);
+    const qtyEl = S('.qty', parent);
+    let qty = qtyEl.text()*1 - 1;
+
+    if (qty < 1) {
+        parent.html(1);
+        S(parent.el.parentElement.parentElement).delclass('cart');
+    } else {
+        qtyEl.text(qty);
+    }
+});
+
+S('header .cart').bind('click', () => {
+    countPricesCart();
+    S('.cart_popup').togclass('open');
+});
+
+S('.delete_popup_cart').bind('click', (e) => {
+    const el = e.currentTarget;
+    const icons = S('.actions_button.cart');
+    const qty = icons.text()*1 - 1;
+    let html = `<span>${qty}</span>`;
+    const div = S(el.parentElement.parentElement);
+    S().remove(div);
+
+    countPricesCart();
+
+    if (qty == 0) {
+        html = '';
+        S('.cart_popup').togclass('open');
+    }
+
+    S('.actions_button.cart').html(html);
+    S('.cart_popup__sum_head span').text(qty);
+});
+
+const countPricesCart = () => {
+    const prices = {current: 0, old: 0};
+    
+    S('.cart_popup__product_price > div').els.forEach(el => {
+        const price = S(el).text().replace(' ₽', ' ').replace(' ₽', '').split(' ');
+        prices.current += parseFloat(price[0]);
+        prices.old += parseFloat(price[1]);
+    })
+
+    S('.cart_popup__sum_price').text(`${prices.current} ₽`);
+    S('.cart_popup__sum_old_price').text(`${prices.old} ₽`);
+}
+
+let timerCloseSearch;
+const startTimerCloseSearch = () => {
+    clearTimeout(timerCloseSearch);
+    timerCloseSearch = setTimeout(closeSearch, 500);
+}
+const closeSearch = () => {
+    if (S('.header_menu_panel__actions .search__input input').val()) return;
+    S('.actions_button.search').css('visibility', 'visible');
+    S('.header_menu_panel__actions .search__input').delclass('active');
+}
+S('.header_menu_panel .actions_button.search').bind('click', (e) => {
+    S(e.currentTarget).css('visibility', 'hidden');
+    S('.header_menu_panel__actions .search__input').addclass('active');
+});
+S('.header_menu_panel__actions .search__input').bind('mouseleave', () => {
+    startTimerCloseSearch()
+});
+
+S('.header_search_panel .actions_button.search').bind('click', (e) => {
+    const input = S('.header_search_panel .search__input');
+
+    if (input.isclass('active')) {
+        S('.header_menu_panel').css('marginTop', '0.55em');
+        input.delclass('active');
+    } else {
+        S('.header_menu_panel').css('marginTop', '4em');
+        input.addclass('active'); 
+    }
+});

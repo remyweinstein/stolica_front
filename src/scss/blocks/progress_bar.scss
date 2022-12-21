@@ -25,3 +25,9 @@
         }
     }
 }
+
+@media (max-width: $tablet_width) {
+    .progress_bar {
+        display: none;
+    }
+}

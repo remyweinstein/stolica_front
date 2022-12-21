@@ -1,0 +1,37 @@
+.button {
+    position: relative;
+    border: 1px solid #333333;
+    border-radius: 2em;
+    height: 3.125em;
+    line-height: 3.125em;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #ebebeb;
+    }
+
+    &.active {
+        color: #fff;
+        background-color: $text_color;
+
+        .icon {
+            @include icon_navy_white;
+        }
+    }
+
+    &.selected {
+        background: linear-gradient(#f6f6f6, #f6f6f6) padding-box,
+        linear-gradient(to right, #1F9363, #364ABC) border-box;
+        border: 1px solid transparent;
+
+        .text {
+            background: -webkit-linear-gradient(126.91deg,  #1F9363, #364ABC);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .icon {
+            @include icon_navy_gradient;
+        }
+    }
+}

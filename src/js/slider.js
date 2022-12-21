@@ -15,7 +15,7 @@
       const slide = S(".progress_bar__line_slider", oB);
       const widthSlide = slide.el.offsetWidth;
   
-      let step = 100;
+      let step = 304;
   
       const _fnPrev = (e) => {
         _clearTimer();
@@ -27,7 +27,7 @@
         }
 
         moveUl(moveX);
-      };
+      }
   
       const _fnNext = (e) => {
         _clearTimer();
@@ -39,7 +39,7 @@
         }
 
         moveUl(moveX);
-      };
+      }
 
       const _checkDisableButton = (x) => {
         const d = "disabled";
@@ -55,11 +55,11 @@
         } else {
             oPrev.delclass(d);
         }
-      };
+      }
 
       const _moveSlide = (x) => {
         slide.el.style.left = (-x * widthSlide * widthObject) / (widthWrapper * widthLine * 4) + 'px';
-      };
+      }
 
       let timer;
 
@@ -83,18 +83,18 @@
             _clearTimer();
           }
         }, 30);
-      };
+      }
       
       const _clearTimer = () => {
         clearInterval(timer);
         timer = null;
-      };
+      }
 
       const init = () => {
         _touchEvents();
         oPrev.bind('click', (e) => { _fnPrev(e) });
         oNext.bind('click', (e) => { _fnNext(e) });
-      };
+      }
   
       const _touchEvents = () => {
         var startX = 0,
@@ -103,6 +103,7 @@
   
         oB.bind('touchend', (e) => {
             if (route) {
+              console.log('route=', route);
               if (Math.abs(route) > 40) {
                 if (route > 0) {
                   _fnNext(e);
@@ -110,20 +111,20 @@
                   _fnPrev(e);
                 }
               } else {
-                oUL.css('left', (parseInt(oUL.css('left').replace("px", "")) + route) + 'px');
+                //oUL.css('left', (parseInt(oUL.css('left').replace("px", "")) + route) + 'px');
               }
             }
   
             route  = null;
             lastX  = null;
             startX = 0;
-        });
+        })
   
         oB.bind('touchstart',
           (e) => {
               startX = e.touches[0].pageX;
           }
-        );
+        )
   
         oB.bind('touchmove',
           (e) => {
@@ -137,14 +138,14 @@
   
               route = x === 0 ? null : startX - moveX;
   
-              oUL.css('left', (parseInt(oUL.css('left').replace("px", "")) - x) + 'px');
+              //oUL.css('left', (parseInt(oUL.css('left').replace("px", "")) - x) + 'px');
               lastX = moveX;
           }
-        );
-      };
+        )
+      }
       
       return init();
-    };
+    }
     
     S('.offers').els.forEach((el) => {
       new Slider(el);

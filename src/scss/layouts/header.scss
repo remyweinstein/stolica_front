@@ -47,50 +47,7 @@ header {
         display: grid;
         grid-template-columns: 1fr 5fr 3fr 2fr;
         align-items: center;
-        gap: 2.5em;
-
-        .header_search_panel__input {
-            position: relative;
-            border: 1px solid #cdcdcd;
-            border-radius: 2em;
-            height: 3.125em;
-            line-height: 3.125em;
-
-            &:hover {
-                border-color: #8D8D8D;
-            }
-
-            
-            &:has(input:focus) {
-                border-color: #8D8D8D;
-            }
-
-            input {
-                color: #8D8D8D;
-                font-size: 1.125em;
-                background: transparent;
-                padding-left: 1em;
-                border: none;
-                width: 90%;
-
-                &:focus {
-                    color: $text_color;
-                }
-            }
-
-            button {
-                position: absolute;
-                right: 15px;
-                top: 15px;
-                border: none;
-                background-color: transparent;
-                width: 18px;
-                height: 18px;
-                @include icon_search_grey;
-                padding: 3px 0.75em;
-                cursor: pointer;
-            }
-        }
+        gap: 1.5em;
 
         .header_search_panel__store {
             position: relative;
@@ -150,84 +107,56 @@ header {
         .header_search_panel__actions {
             text-align: right;
 
-            .header_search_panel__actions__button {
-                display: inline-block;
-                position: relative;
-                cursor: pointer;
-                width: 3.125em;
-                height: 3.125em;
-                border-radius: 2em;
-                background-color: #fff;
-                margin-left: 0.625em;
+            .search {
+                display: none;
+            }
+        }
+    }
+}
 
-                &:after {
-                    content: "";
-                    display: block;
-                    width: 50px;
-                    height: 50px;
-                    background-position: center;
-                    background-repeat: no-repeat;
-                }
+@media (max-width: 1130px) {
+    header {
+        .header_search_panel {
+            grid-template-columns: 1fr 4fr 3fr 3fr;
+            align-items: center;
+            gap: 0.5em;
+        }
+    }
+}
 
-                &.heart {
-                    &:after {
-                        content: "";
-                        @include icon_heart_gradient;
-                    }
-                }
+@media (max-width: $mobile_width) {
+    header {
+        .header_top_panel {
+            display: none;
+        }
 
-                &.cart {
-                    &:after {
-                        content: "";
-                        @include icon_cart_gradient;
-                    }
-                }
+        .header_search_panel {
+            grid-template-columns: 1fr 2fr;
+            margin-bottom: 1em;
 
-                &.personal {
-                    &:after {
-                        content: "";
-                        @include icon_personal_gradient;
-                    }
-                }
+            & > img {
+                width: 90px;
+            }
 
-                &:hover {
-                    background-color: #ebebeb;
-                }
+            .search__input {
+                display: none;
 
                 &.active {
-                    @include main_gradient;
-                    
-                    &.heart {
-                        &:after {
-                            content: "";
-                            @include icon_heart_white;
-                        }
-                    }
-    
-                    &.cart {
-                        &:after {
-                            content: "";
-                            @include icon_cart_white;
-                        }
-                    }
-    
-                    &.personal {
-                        &:after {
-                            content: "";
-                            @include icon_personal_white;
-                        }
-                    }
-                }
-
-                & > span {
+                    display: block;
                     position: absolute;
-                    font-size: 10px;
-                    font-weight: 700;
-                    right: -2px;
-                    color: #fff;
-                    background-color: $text_color;
-                    border-radius: 10px;
-                    padding: 3px 4px 2px 3px;
+                    top: 70px;
+                    width: 93%;
+                }
+            }
+
+            .header_search_panel__store {
+                display: none;
+            }
+
+            .header_search_panel__actions {
+    
+                .search {
+                    display: inline-block;
                 }
             }
         }

@@ -1,0 +1,182 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-items: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 100;
+    color: #f6f6f6;
+}
+
+.ymaps-2-1-79-balloon {
+    box-shadow: none!important;
+    border-radius: 1em!important;
+
+    .button {
+        height: 2.125em;
+        line-height: 2.125em;
+    }
+
+    .ymaps-2-1-79-balloon__layout {
+        border-radius: 1em!important;
+    }
+    
+    .ymaps-2-1-79-balloon__close {
+        display: none!important;
+    }
+    
+    .ymaps-2-1-79-balloon__content {
+        &>ymaps{
+            height: 6em!important;
+        }
+    }
+}
+
+.instock_stores {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1em;
+    width: 80%;
+    padding: 2em;
+
+    & > div {
+        background-color: $text_color;
+        border-radius: 1em;
+        padding: 2em;
+
+        &.instock_stores__cities {
+
+            h3 {
+                font-size: 1.25em;
+                font-weight: 600;
+                padding: 0;
+                margin: 0;
+            }
+
+            ul {
+
+                li {
+                    font-size: 1em;
+                    color: #8d8d8d;
+                    cursor: pointer;
+                }
+            }
+
+            .button {
+                width: 100%;
+                background-color: #262626;
+
+                &.selected {
+                    background: linear-gradient(#333,#333) padding-box,linear-gradient(to right,#1f9363,#364abc) border-box;
+
+                    .text {
+                        color: #fff;
+                        -webkit-text-fill-color: #fff;
+                        background: none;
+                    }
+                }
+
+                .text {
+                    font-size: 1.25em;
+                    color: #fff;
+                }
+            }
+        }
+
+        &.instock_stores__stores {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1em;
+
+            .instock_stores__stores_list {
+
+                .search__input input {
+                    color: #cdcdcd;
+                }
+
+                .instock_stores__stores_list_filters {
+                    display: grid;
+                    grid-template-columns: 4fr 1fr;
+                    gap: 0.5em;
+                }
+
+                ul {
+                    overflow: auto;
+                    height: 31em;
+                    margin-top: 2em;
+
+                    li {
+                        position: relative;
+                        font-weight: 300;
+                        font-size: 1.125em;
+                        cursor: pointer;
+                        margin-bottom: .75em;
+                        color: #cdcdcd;
+
+                        &:after {
+                            content: "";
+                            position: absolute;
+                            width: 22px;
+                            height: 22px;
+                            border: 1px solid #cdcdcd;
+                            border-radius: 22px;
+                            right: 30px;
+
+                            &:after {
+                                content: "v";
+                            }
+                        }
+
+                        &.active {
+                            color: #f6f6f6;
+
+                            &:after {
+                                border: none;
+                                width: 23px;
+                                height: 23px;
+                                right: 30px;
+                                @include main_gradient;
+                            }
+                        }
+                    }
+
+                    &::-webkit-scrollbar {
+                        width: 6px;
+                    }
+
+                    &::-webkit-scrollbar-track {
+                        background: linear-gradient(
+                        to left,
+                        rgba(141, 141, 141, 0) 0%,
+                        rgba(141, 141, 141, 0) 30%,
+                        rgba(141, 141, 141, 1) 50%,
+                        rgba(141, 141, 141, 0) 70%,
+                        rgba(141, 141, 141, 0) 100%
+                        );
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                        background-color: #8d8d8d;
+                        border-radius: 5px;
+                    }
+                }
+            }
+
+            #map {
+                width: 100%;
+                height: 100%;
+                border-radius: 1em;
+                overflow: hidden;
+            }
+        }
+    }
+}
+
+@media (max-width: $wrapper_width) {
+    .instock_stores {
+        width: 100%;
+    }
+}

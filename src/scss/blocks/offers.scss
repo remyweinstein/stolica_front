@@ -18,6 +18,18 @@
 
         & > a {
             font-weight: 700;
+            position: relative;
+
+            &:after {
+                content: "";
+                height: 0.75em;
+                width: 1.5em;
+                top: 4px;
+                left: 5.5em;
+                position: absolute;
+                background-repeat: no-repeat;
+                @include icon_arrow_gradient_small;    
+            }
         }
     }
 
@@ -27,6 +39,14 @@
         li {
             display: inline-block;
             vertical-align: top;
+        }
+    }
+}
+
+@media (max-width: $tablet_width) {
+    .offers {
+        .offers_header {
+            grid-template-columns: 6fr 2fr;
         }
     }
 }

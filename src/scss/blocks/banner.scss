@@ -72,3 +72,36 @@
     font-size: 0.875em;
     z-index: 1;
 }
+
+@media (max-width: $tablet_width) {
+    .banner {
+        max-width: initial;
+        width: 100%;
+
+        ul {
+            li {
+                .banner_content {
+                    font-size: 0.75em;
+                    top: 0;
+
+                    h1 {
+                        font-size: 2em;
+                    }
+
+                    p {
+                        display: none;
+                    }
+                }
+
+                .button_arrow {
+                    bottom: 0.5em;
+                    left: 1em;
+                }
+            }
+        }
+    }
+
+    .banner_navigation {
+        display: none;
+    }
+}

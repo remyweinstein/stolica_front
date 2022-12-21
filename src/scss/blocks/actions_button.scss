@@ -1,0 +1,94 @@
+.actions_button {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    width: 3.125em;
+    height: 3.125em;
+    border-radius: 2em;
+    background-color: #fff;
+    margin-left: 0.625em;
+
+    &:after {
+        content: "";
+        display: block;
+        width: 3.25em;
+        height: 3.25em;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    &.search {
+        &:after {
+            content: "";
+            @include icon_search_gradient;
+        }
+    }
+
+    &.heart {
+        &:after {
+            content: "";
+            @include icon_heart_gradient;
+        }
+    }
+
+    &.cart {
+        &:after {
+            content: "";
+            @include icon_cart_gradient;
+        }
+    }
+
+    &.personal {
+        &:after {
+            content: "";
+            @include icon_personal_gradient;
+        }
+    }
+
+    &:hover {
+        background-color: #ebebeb;
+    }
+
+    &.active {
+        @include main_gradient;
+        
+        &.search {
+            &:after {
+                content: "";
+                @include icon_search_white;
+            }
+        }
+    
+        &.heart {
+            &:after {
+                content: "";
+                @include icon_heart_white;
+            }
+        }
+
+        &.cart {
+            &:after {
+                content: "";
+                @include icon_cart_white;
+            }
+        }
+
+        &.personal {
+            &:after {
+                content: "";
+                @include icon_personal_white;
+            }
+        }
+    }
+
+    & > span {
+        position: absolute;
+        font-size: 10px;
+        font-weight: 700;
+        right: -2px;
+        color: #fff;
+        background-color: $text_color;
+        border-radius: 10px;
+        padding: 3px 4px 2px 3px;
+    }
+}

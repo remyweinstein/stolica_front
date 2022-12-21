@@ -125,3 +125,82 @@ footer {
         }
     }
 }
+
+@media (max-width: $tablet_width) {
+    footer {
+        .footer__find_error {
+
+            &:before {
+                width: 2em;
+                height: 2em;
+                line-height: 2em;
+                padding: 0;
+                text-align: center;
+                float: left;
+                display: inline;
+                margin: 0.5em 1.5em 1em 0;
+            }
+        }
+
+        .footer__container {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.25em;
+
+            .footer__contacts {
+                grid-column: span 2;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+
+                .logo {
+                    grid-column: span 1;
+                    grid-row: span 1;
+                    order: 1;
+                    display: inline; 
+                    justify-self: right;   
+                }
+
+                .footer__contacts_head {
+                    grid-column: span 1;
+                    grid-row: span 1;
+                    order: 0;
+                    display: inline;
+                }
+
+                .footer__contacts_time {
+                    grid-column: span 2;
+                    grid-row: span 1;
+                    width: 100%;
+                    margin-top: 1em;
+                    order: 3;
+                    display: inline;
+                }
+            }
+
+            .footer__column {
+                grid-column: span 1;
+                grid-row: span 1;
+                margin-top: 1.5em;
+            }
+
+            .footer__actions {
+                grid-column: span 2;
+                margin-top: 1.5em;
+            }
+        }
+
+        .footer__bottom {
+            grid-template-columns: 1fr;
+            
+            .minzdrav {
+                margin-top: 2em;
+
+                &:before {
+                    padding: 0.5em 0.2em;
+                    float: left;
+                    display: inline;
+                    margin: 0 1.5em 1em 0;
+                }
+            }
+        }
+    }
+}

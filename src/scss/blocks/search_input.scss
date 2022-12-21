@@ -1,0 +1,41 @@
+.search__input {
+    position: relative;
+    border: 1px solid #cdcdcd;
+    border-radius: 2em;
+    height: 3.125em;
+    line-height: 3.125em;
+
+    &:hover {
+        border-color: #8D8D8D;
+    }
+
+    &:has(input:focus) {
+        border-color: #8D8D8D;
+    }
+
+    input {
+        color: #8D8D8D;
+        font-size: 1.125em;
+        background: transparent;
+        padding-left: 1em;
+        border: none;
+        width: 90%;
+
+        &:focus {
+            color: $text_color;
+        }
+    }
+
+    button {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        border: none;
+        background-color: transparent;
+        width: 18px;
+        height: 18px;
+        @include icon_search_grey;
+        padding: 3px 0.75em;
+        cursor: pointer;
+    }
+}
