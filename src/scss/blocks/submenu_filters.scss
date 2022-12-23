@@ -60,6 +60,7 @@
     .sub_menu__filters_prices {
 
         ul {
+            white-space: normal;
 
             li {
                 border: 1px solid #cdcdcd;
@@ -86,5 +87,11 @@
                 }
             }
         }
+    }
+}
+
+@media (max-width: $mobile_width) {
+    .sub_menu__filters { 
+        grid-template-columns: 1fr 1fr;
     }
 }

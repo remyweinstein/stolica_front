@@ -277,7 +277,7 @@ const S = function (s, p) {
 /*next file*/
 
 (function(S, Stores) {
-    const Instock = function() {
+    const SelectStore = function() {
         const button = S('.header_search_panel__store');
         const citiesBlock = S('.instock_stores__cities');
         const storesBlock = S('.instock_stores__stores_list');
@@ -286,8 +286,14 @@ const S = function (s, p) {
         const overlay = S('.overlay');
         const buttonSelect = S('#select_store');
         const buttonClose = S('#close_store');
+        const buttonInstock = S('.instock');
+        const input = S('.instock_stores__stores_list .search__input input');
+
         this.ObjectManager;
-        this.store_id = 1;
+        this.searchString = '';
+        this.isSelectCity = true;
+        this.store_id = localStorage.getItem('current_store') || 1;
+        this.city_id = localStorage.getItem('current_city') || 1;
 
         const getListCities = () => {
             return Stores.reduce((acc, item) => {
@@ -302,8 +308,10 @@ const S = function (s, p) {
             }, []);
         }
 
-        const getListStores = (cityId) => {
-            return Stores.filter(el => el.id == cityId);
+        const getListStores = () => {
+            if (!this.searchString) return Stores.filter(el => el.id == this.city_id);
+
+            return Stores.filter(el => (el.store_title.toLowerCase().indexOf(this.searchString.toLowerCase())!==-1 && el.id == this.city_id)); 
         }
 
         const openStores = () => {
@@ -327,45 +335,54 @@ const S = function (s, p) {
                 citiesUl.append(el);
             });
 
-            renderStores(1);
+            renderStores();
         }
 
-        const renderStores = (cityId) => {
+        const renderStores = () => {
             storesUl.html(' ');
             S('#map').html(' ');
-            getListStores(cityId).forEach(city => {
+
+            getListStores().forEach(city => {
                 const {rsa_id, store_title} = city;
                 const address = `${store_title.split(",")[1]}, ${store_title.split(",")[2]}`;
-                const el = S().strToNode(`<li data-id="${rsa_id}">${address}</li>`);
+                const el = S().strToNode(`<li data-id="${rsa_id}"${(rsa_id==this.store_id)?' class="active"':''}>${(!this.isSelectCity)?'<span>26 шт.</span>':''}${address}</li>`);
                 el.bind('click', clickStore);
                 storesUl.append(el);
             });
-            initMap(cityId);
+
+            initMap();
         }
 
         const clickStore = (e) => {
-            openBalloon(e.currentTarget.dataset.id);
+            const el = e.currentTarget;
+            this.store_id = el.dataset.id;
+            openBalloon(el.dataset.id);
+            S('li', storesUl).delclass('active');
+            S(el).addclass('active');
         }
 
         const selectCity = (e) => {
-            renderStores(e.currentTarget.dataset.id);
+            this.city_id = e.currentTarget.dataset.id;
+            renderStores();
         }
 
-        const clickOnMap = (e) => {
-            this.store_id = e.currentTarget.dataset.id;
+        const clickOnMap = (t) => {
+            this.store_id = t.dataset.id;
             selectStore();
-
         }
 
         const selectStore = () => {
+            const store = Stores.filter(el => el.rsa_id == this.store_id);
+            const address = store[0].store_title.split(',');
+            S('.header_search_panel__store .text').text(`${address[1]}, ${address[2]}`);
+            S('.header_search_panel__store').addclass('selected');
             localStorage.setItem('current_store', this.store_id);
+            localStorage.setItem('current_city', this.city_id);
             closeStores();
         }
 
-        ymaps.ready(function(){});
-
-        const initMap = (cityId) => {
-            const stores = getListStores(cityId);
+        const initMap = () => {
+            const stores = getListStores();
             const x = parseFloat(stores[0].coordinates.split(',')[0]);
             const y = parseFloat(stores[0].coordinates.split(',')[1]);
 
@@ -397,8 +414,8 @@ const S = function (s, p) {
                     },
                     properties: {
                         hintContent: store.store_title,
-                        balloonContent: `<p>${store.store_title}</p><button class="button selected" class="select_from_map" data-id="${store.rsa_id}">Выбрать</button>`,
-                    },
+                        balloonContent: `<p>${store.store_title}</p><button class="button primary select_from_map" data-id="${store.rsa_id}">Выбрать</button>`,
+                    }, 
                     options: {
                         iconLayout: 'default#image',
                         iconImageHref: 'assets/icons/inactive_point.png',
@@ -446,23 +463,52 @@ const S = function (s, p) {
             );
         }
 
-        const init = () => {
-            button.bind('click', openStores);
-            overlay.bind('click', closeStores);
-            buttonSelect.bind('click', selectStore);
-            buttonClose.bind('click', closeStores);
-            S('.select_from_map').on('click', document, clickOnMap);
+        const openInstock = () => {
+            this.isSelectCity = false;
+            S('.instock_stores').addclass('product_instock');
+            openStores();
+        }
 
-            S('.instock_stores').bind('click', (e) => {
-                e.stopPropagation();
-            });
+        const openSelect = () => {
+            this.isSelectCity = true;
+            S('.instock_stores').delclass('product_instock');
+            openStores();
+        }
+
+        const searchStore = (e) => {
+            const el = e.currentTarget;
+            this.searchString = el.value;
+            renderStores();
+        }
+
+        const init = () => {
+            ymaps.ready(function(){
+                buttonInstock.bind('click', openInstock);
+                button.bind('click', openSelect);
+                overlay.bind('click', closeStores);
+                buttonSelect.bind('click', selectStore);
+                buttonClose.bind('click', closeStores);
+
+                S('#map').on('click', '.select_from_map', (e, t) => {
+                    clickOnMap(t);
+                });
+
+                S('.instock_stores').bind('click', (e) => {
+                    e.stopPropagation();
+                });
+
+                input.bind('input', searchStore);
+            })
         }
 
         return init();
     }
 
-    new Instock();  
+    new SelectStore();  
   })(S, Stores);
+
+/*next file*/
+
 
 /*next file*/
 
@@ -1108,3 +1154,11 @@ S('.header_search_panel .actions_button.search').bind('click', (e) => {
         input.addclass('active'); 
     }
 });
+
+let current_store = localStorage.getItem('current_store');
+if (current_store) {
+    const store = Stores.filter(el => el.rsa_id == current_store);
+    const address = store[0].store_title.split(',');
+    S('.header_search_panel__store .text').text(`${address[1]}, ${address[2]}`);
+    S('.header_search_panel__store').addclass('selected');
+}

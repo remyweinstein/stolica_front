@@ -11,7 +11,7 @@ module.exports = function(grunt) {
           }
         },
         js: {
-          files: ['src/js/stolica.js', 'src/js/instock.js', 'src/js/menu.js', 'src/js/banner.js', 'src/js/slider.js', 'src/js/app.js'],
+          files: ['src/js/stolica.js', 'src/js/select_city.js', 'src/js/instock.js', 'src/js/menu.js', 'src/js/banner.js', 'src/js/slider.js', 'src/js/app.js'],
           tasks: ['js']
         },
         all: {
@@ -28,7 +28,7 @@ module.exports = function(grunt) {
           separator: '\n/*next file*/\n\n'
         },
         dist: {
-          src: ['src/js/stolica.js', 'src/js/instock.js', 'src/js/menu.js', 'src/js/banner.js', 'src/js/slider.js', 'src/js/app.js'],
+          src: ['src/js/stolica.js', 'src/js/select_city.js', 'src/js/instock.js', 'src/js/menu.js', 'src/js/banner.js', 'src/js/slider.js', 'src/js/app.js'],
           dest: 'build/js/built.js'
         }
       },

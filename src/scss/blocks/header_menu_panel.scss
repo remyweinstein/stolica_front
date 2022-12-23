@@ -31,6 +31,7 @@
        
         .header_menu_panel__burger {
             width: 0.9em;
+            justify-self: center;
 
             .burger {
                 top: 17px;
@@ -343,6 +344,27 @@
 
         &.sticked {
             display: none;
+        }
+
+        .header_menu_panel__list {
+            & > li {
+                .sub_menu {
+                    left: 0;
+                    width: 100%;
+
+                    .sub_menu_wrapper {
+                        grid-template-columns: 1fr;
+
+                        .sub_menu__special_offer {
+                            display: none;
+                        }
+                    }
+
+                    .button_arrow {
+                        bottom: 0em;
+                    }
+                }
+            }
         }
     }
 }

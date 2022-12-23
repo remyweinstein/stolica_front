@@ -714,6 +714,9 @@ header .header_search_panel .header_search_panel__actions .search {
     font-size: 1em;
     text-align: left;
   }
+  .mainpage_banners .mainpage_banners__adv .button_arrow {
+    bottom: 2em;
+  }
 }
 footer {
   margin-top: 5em;
@@ -1043,6 +1046,7 @@ footer .footer__bottom .minzdrav:before {
   color: #1F9363;
   font-size: 0.75em;
   justify-self: left;
+  cursor: pointer;
 }
 .catalog_product .catalog_product__actions .instock span {
   display: inline-block;
@@ -1343,6 +1347,7 @@ footer .footer__bottom .minzdrav:before {
 }
 .header_menu_panel.sticked .header_menu_panel__burger {
   width: 0.9em;
+  justify-self: center;
 }
 .header_menu_panel.sticked .header_menu_panel__burger .burger {
   top: 17px;
@@ -1593,6 +1598,19 @@ footer .footer__bottom .minzdrav:before {
   .header_menu_panel.sticked {
     display: none;
   }
+  .header_menu_panel .header_menu_panel__list > li .sub_menu {
+    left: 0;
+    width: 100%;
+  }
+  .header_menu_panel .header_menu_panel__list > li .sub_menu .sub_menu_wrapper {
+    grid-template-columns: 1fr;
+  }
+  .header_menu_panel .header_menu_panel__list > li .sub_menu .sub_menu_wrapper .sub_menu__special_offer {
+    display: none;
+  }
+  .header_menu_panel .header_menu_panel__list > li .sub_menu .button_arrow {
+    bottom: 0em;
+  }
 }
 .sub_menu__filters {
   display: grid;
@@ -1632,6 +1650,9 @@ footer .footer__bottom .minzdrav:before {
 .sub_menu__filters .sub_menu__filters_colors li.white:before {
   background-color: #fff;
 }
+.sub_menu__filters .sub_menu__filters_prices ul {
+  white-space: normal;
+}
 .sub_menu__filters .sub_menu__filters_prices ul li {
   border: 1px solid #cdcdcd;
   border-radius: 2em;
@@ -1654,6 +1675,11 @@ footer .footer__bottom .minzdrav:before {
   background: none;
 }
 
+@media (max-width: 750px) {
+  .sub_menu__filters {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 .burger {
   height: 1.25em;
   width: 1.25em;
@@ -1797,14 +1823,33 @@ footer .footer__bottom .minzdrav:before {
   border-radius: 1em !important;
 }
 .ymaps-2-1-79-balloon .button {
-  height: 2.125em;
-  line-height: 2.125em;
+  padding: 0 1em;
+  height: 2.5em;
+  line-height: 2.5em;
 }
 .ymaps-2-1-79-balloon .ymaps-2-1-79-balloon__layout {
   border-radius: 1em !important;
 }
 .ymaps-2-1-79-balloon .ymaps-2-1-79-balloon__close {
   display: none !important;
+}
+.ymaps-2-1-79-balloon .ymaps-2-1-79-balloon__content {
+  font-family: "Nunito Sans", sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  text-align: center;
+}
+.ymaps-2-1-79-balloon .ymaps-2-1-79-balloon__content button {
+  margin-top: 1.5em;
+}
+.ymaps-2-1-79-balloon .ymaps-2-1-79-balloon__content .ymaps-2-1-79-b-cluster-content {
+  font-family: "Nunito Sans", sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  text-align: center;
+}
+.ymaps-2-1-79-balloon .ymaps-2-1-79-balloon__content .ymaps-2-1-79-b-cluster-content button {
+  margin-top: 1.5em;
 }
 .ymaps-2-1-79-balloon .ymaps-2-1-79-balloon__content > ymaps {
   height: 6em !important;
@@ -1817,6 +1862,65 @@ footer .footer__bottom .minzdrav:before {
   width: 80%;
   padding: 2em;
 }
+.instock_stores.product_instock {
+  grid-template-columns: 1fr;
+}
+.instock_stores.product_instock > div {
+  background-color: #fff;
+  color: #333333;
+}
+.instock_stores.product_instock > div.instock_stores__cities {
+  display: none;
+}
+.instock_stores.product_instock > div.instock_stores__cities .select_city_attention {
+  display: none;
+}
+.instock_stores.product_instock > div.instock_stores__cities .instock_attention {
+  display: block;
+}
+.instock_stores.product_instock > div.instock_stores__cities .select_city_title {
+  display: none;
+}
+.instock_stores.product_instock > div.instock_stores__cities .instock_title {
+  display: block;
+}
+.instock_stores.product_instock > div.instock_stores__cities #select_store {
+  display: none;
+}
+.instock_stores.product_instock > div.instock_stores__cities button {
+  background-color: #ebebeb;
+  border: none;
+  margin-top: 6em;
+}
+.instock_stores.product_instock > div.instock_stores__cities button .text {
+  color: #333333;
+}
+.instock_stores.product_instock > div.instock_stores__stores .instock_stores__stores_list ul li {
+  color: #333333;
+}
+.instock_stores.product_instock > div.instock_stores__stores .instock_stores__stores_list ul li.active {
+  color: #333333;
+}
+.instock_stores.product_instock > div.instock_stores__stores .instock_stores__stores_list ul li span {
+  color: #1F9363;
+  margin-right: 1em;
+}
+.instock_stores.product_instock > div.instock_stores__stores .instock_stores__stores_list ul li span:before {
+  content: "|||";
+  display: inline-block;
+  margin-right: 0.5em;
+  top: -1px;
+  position: relative;
+}
+.instock_stores.product_instock > div.instock_stores__stores .instock_stores__stores_list ul li span.lot {
+  color: #1F9363;
+}
+.instock_stores.product_instock > div.instock_stores__stores .instock_stores__stores_list ul li span.little {
+  color: #D2AF6C;
+}
+.instock_stores.product_instock > div.instock_stores__stores .instock_stores__stores_list ul li span.few {
+  color: #D2626B;
+}
 .instock_stores > div {
   background-color: #333333;
   border-radius: 1em;
@@ -1828,14 +1932,56 @@ footer .footer__bottom .minzdrav:before {
   padding: 0;
   margin: 0;
 }
+.instock_stores > div.instock_stores__cities h3:after {
+  content: "";
+  display: inline-block;
+  position: relative;
+  height: 26px;
+  width: 21px;
+  background-repeat: no-repeat;
+  top: 6px;
+  right: -20px;
+  background-image: url("data:image/svg+xml,%3Csvg width='21' height='27' viewBox='0 0 21 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.5 14.7131C12.5023 14.7131 14.125 13.0699 14.125 11.0704C14.125 9.07104 12.5023 7.42784 10.5 7.42784C8.49767 7.42784 6.875 9.07104 6.875 11.0704C6.875 13.0699 8.49767 14.7131 10.5 14.7131ZM10.5 1.5C15.4849 1.5 20 5.33128 20 11.3347C20 13.1787 19.2931 15.2758 17.7513 17.6492C16.2114 20.0196 13.874 22.6105 10.7063 25.4217C10.5851 25.526 10.4022 25.5261 10.2809 25.4219C7.11977 22.6108 4.78562 20.0201 3.24728 17.6496C1.70692 15.276 1 13.1788 1 11.3347C1 5.33128 5.51507 1.5 10.5 1.5Z' stroke='url(%23paint0_linear_32_385)' stroke-width='2'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_32_385' x1='-8.49632e-08' y1='0.500305' x2='26.88' y2='16.8077' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23364ABC'/%3E%3Cstop offset='1' stop-color='%231F9363'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E ");
+}
+.instock_stores > div.instock_stores__cities .select_city_attention {
+  display: block;
+  margin: 2em 0;
+}
+.instock_stores > div.instock_stores__cities .instock_attention {
+  display: none;
+  margin: 2em 0;
+}
+.instock_stores > div.instock_stores__cities .select_city_title {
+  display: block;
+}
+.instock_stores > div.instock_stores__cities .instock_title {
+  display: none;
+}
+.instock_stores > div.instock_stores__cities ul {
+  overflow: auto;
+  height: 18em;
+  margin-top: 2em;
+}
 .instock_stores > div.instock_stores__cities ul li {
   font-size: 1em;
   color: #8d8d8d;
   cursor: pointer;
+  margin-bottom: 0.45em;
+}
+.instock_stores > div.instock_stores__cities ul::-webkit-scrollbar {
+  width: 6px;
+}
+.instock_stores > div.instock_stores__cities ul::-webkit-scrollbar-track {
+  background: linear-gradient(to left, rgba(141, 141, 141, 0) 0%, rgba(141, 141, 141, 0) 30%, rgb(141, 141, 141) 50%, rgba(141, 141, 141, 0) 70%, rgba(141, 141, 141, 0) 100%);
+}
+.instock_stores > div.instock_stores__cities ul::-webkit-scrollbar-thumb {
+  background-color: #8d8d8d;
+  border-radius: 5px;
 }
 .instock_stores > div.instock_stores__cities .button {
   width: 100%;
   background-color: #262626;
+  margin-top: 1em;
 }
 .instock_stores > div.instock_stores__cities .button.selected {
   background: linear-gradient(#333, #333) padding-box, linear-gradient(to right, #1f9363, #364abc) border-box;
@@ -2005,6 +2151,10 @@ footer .footer__bottom .minzdrav:before {
 }
 .button.active .icon {
   background-image: url("data:image/svg+xml,%3Csvg width='17' height='20' viewBox='0 0 17 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.03571 10.1639C9.14062 10.1639 10.0446 9.24914 10.0446 8.13111C10.0446 7.01309 9.14062 6.09834 8.03571 6.09834C6.9308 6.09834 6.02678 7.01309 6.02678 8.13111C6.02678 9.24914 6.9308 10.1639 8.03571 10.1639ZM8.03571 0C12.2545 0 16.0714 3.27277 16.0714 8.33439C16.0714 11.5665 13.6105 15.3678 8.69866 19.7484C8.31696 20.0839 7.74442 20.0839 7.36272 19.7484C2.46094 15.3678 0 11.5665 0 8.33439C0 3.27277 3.81696 0 8.03571 0Z' fill='white'/%3E%3C/svg%3E");
+}
+.button.primary {
+  color: #333333;
+  background-color: #fff;
 }
 .button.selected {
   background: linear-gradient(#f6f6f6, #f6f6f6) padding-box, linear-gradient(to right, #1F9363, #364ABC) border-box;
