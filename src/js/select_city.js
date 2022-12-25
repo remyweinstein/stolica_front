@@ -1,6 +1,6 @@
 (function(S, Stores) {
     const SelectStore = function() {
-        const button = S('.header_search_panel__store');
+        const button = S('.select_store_button');
         const citiesBlock = S('.instock_stores__cities');
         const storesBlock = S('.instock_stores__stores_list');
         const citiesUl = S('ul', citiesBlock);
@@ -10,6 +10,7 @@
         const buttonClose = S('#close_store');
         const buttonInstock = S('.instock');
         const input = S('.instock_stores__stores_list .search__input input');
+        const city_title = S('.city_title');
 
         this.ObjectManager;
         this.searchString = '';
@@ -96,8 +97,9 @@
         const selectStore = () => {
             const store = Stores.filter(el => el.rsa_id == this.store_id);
             const address = store[0].store_title.split(',');
-            S('.header_search_panel__store .text').text(`${address[1]}, ${address[2]}`);
-            S('.header_search_panel__store').addclass('selected');
+            S('.select_store_button .text').text(`${address[1]}, ${address[2]}`);
+            S('.select_store_button').addclass('selected');
+            S('.city_title').text(store[0].title);
             localStorage.setItem('current_store', this.store_id);
             localStorage.setItem('current_city', this.city_id);
             closeStores();

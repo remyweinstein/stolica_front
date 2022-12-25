@@ -278,7 +278,7 @@ const S = function (s, p) {
 
 (function(S, Stores) {
     const SelectStore = function() {
-        const button = S('.header_search_panel__store');
+        const button = S('.select_store_button');
         const citiesBlock = S('.instock_stores__cities');
         const storesBlock = S('.instock_stores__stores_list');
         const citiesUl = S('ul', citiesBlock);
@@ -288,6 +288,7 @@ const S = function (s, p) {
         const buttonClose = S('#close_store');
         const buttonInstock = S('.instock');
         const input = S('.instock_stores__stores_list .search__input input');
+        const city_title = S('.city_title');
 
         this.ObjectManager;
         this.searchString = '';
@@ -374,8 +375,9 @@ const S = function (s, p) {
         const selectStore = () => {
             const store = Stores.filter(el => el.rsa_id == this.store_id);
             const address = store[0].store_title.split(',');
-            S('.header_search_panel__store .text').text(`${address[1]}, ${address[2]}`);
-            S('.header_search_panel__store').addclass('selected');
+            S('.select_store_button .text').text(`${address[1]}, ${address[2]}`);
+            S('.select_store_button').addclass('selected');
+            S('.city_title').text(store[0].title);
             localStorage.setItem('current_store', this.store_id);
             localStorage.setItem('current_city', this.city_id);
             closeStores();
@@ -1155,10 +1157,21 @@ S('.header_search_panel .actions_button.search').bind('click', (e) => {
     }
 });
 
-let current_store = localStorage.getItem('current_store');
+const current_store = localStorage.getItem('current_store');
 if (current_store) {
     const store = Stores.filter(el => el.rsa_id == current_store);
     const address = store[0].store_title.split(',');
-    S('.header_search_panel__store .text').text(`${address[1]}, ${address[2]}`);
-    S('.header_search_panel__store').addclass('selected');
+    S('.select_store_button .text').text(`${address[1]}, ${address[2]}`);
+    S('.select_store_button').addclass('selected');
 }
+
+const current_city = localStorage.getItem('current_city');
+if (current_city) {
+    const store = Stores.filter(el => el.id == current_city);
+    S('.city_title').text(store[0].title);
+}
+
+S('.dropdown_sort').bind('click', (e) => {
+    const el = e.currentTarget;
+    S(el).togclass('open');
+});

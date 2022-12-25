@@ -24,6 +24,17 @@ ul {
     }
 }
 
+ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        margin: 0;
+        padding: 0;
+    }
+}
+
 input:focus, textarea:focus, select:focus{
     outline: none;
 }
@@ -33,7 +44,7 @@ a {
     color: $text_color;
 }
 
-main {
+.main {
     margin-top: 1.875em;
 }
 
@@ -62,7 +73,7 @@ p {
 }
 
 @media (max-width: $mobile_width) {
-    main {
+    .main {
         margin-top: 0;
     }
 

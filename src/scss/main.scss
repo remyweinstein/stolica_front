@@ -8,6 +8,7 @@
 
 @import "layouts/header";
 @import "layouts/mainpage";
+@import "layouts/catalog";
 @import "layouts/footer";
 
 @import "blocks/button_arrow";
@@ -27,3 +28,5 @@
 @import "blocks/actions_button";
 @import "blocks/buttons";
 @import "blocks/cart_popup";
+@import "blocks/breadcrumbs";
+@import "blocks/select_store";

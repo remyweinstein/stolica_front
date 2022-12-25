@@ -1,6 +1,8 @@
 footer {
     margin-top: 5em;
     padding-bottom: 5em;
+    background-image: url("data:image/svg+xml,%3Csvg width='2550' height='1200' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cfilter id='filter0_40_580' x='0' y='0' width='2550' height='1200' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeGaussianBlur result='gaussian-blur-1' in='none' stdDeviation='40'%3E%3C/feGaussianBlur%3E%3CfeGaussianBlur stdDeviation='40' result='gaussian-blur-0' in='SourceGraphic'%3E%3C/feGaussianBlur%3E%3C/filter%3E%3ClinearGradient id='paint0_linear_42_581' x1='-0.17581' y1='0.30502' x2='0.97435' y2='-0.09245'%3E%3Cstop stop-color='%23364ABC'%3E%3C/stop%3E%3Cstop offset='1' stop-color='%231F9363'%3E%3C/stop%3E%3C/linearGradient%3E%3C/defs%3E%3Cg%3E%3Ctitle%3Ebackground%3C/title%3E%3Crect x='-1' y='-1' width='2552' height='1202' id='canvas_background' fill='none'%3E%3C/rect%3E%3C/g%3E%3Cg%3E%3Ctitle%3ELayer 1%3C/title%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M 1008.987 786.425 C 840.217 627.122 794.405 395.711 871.552 197.262 L 1253 293.737 C 1207.449 367.185 1218.042 463.108 1284.781 526.103 C 1364.113 600.983 1492.736 600.983 1572.067 526.103 C 1612.013 488.398 1631.845 438.899 1631.564 389.482 L 2012.97 485.946 C 1992.905 595.99 1937.876 701.462 1847.865 786.425 C 1616.212 1005.078 1240.636 1005.078 1008.987 786.425 Z' fill='url(%23paint0_linear_42_581)' id='svg_1' style='' filter='url(%23filter0_40_580)'%3E%3C/path%3E%3C/g%3E%3Cg%3E%3Ctitle%3ELayer 2%3C/title%3E%3Crect x='0' y='0' fill-opacity='0.4' fill='%23F6F6F6' height='1200' width='2550' id='svg_2'%3E%3C/rect%3E%3C/g%3E%3Cg%3E%3Ctitle%3ELayer 3%3C/title%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='m628.204,847.272549l320.538,320.541c179.108,-160.742 263.498,-413.996 196.948,-662.366c-94.32,-352.028 -456.164,-560.938 -808.193,-466.6122c-128.619,34.4635 -238.1332,104.6382 -320.73248,196.9982l320.52848,320.528c27.169,-38.797 67.618,-68.615 116.948,-81.833c111.402,-29.85 225.909,36.261 255.759,147.662c23.343,87.12 -12,176.138 -81.796,225.082z' fill='white' id='svg_3' stroke='null'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+    background-position: center top;
 
     a {
         
@@ -19,7 +21,7 @@ footer {
     }
 
     .footer__find_error {
-        margin-bottom: 5em;
+        margin-bottom: 10em;
         color: #8d8d8d;
 
         &:before {
@@ -128,6 +130,7 @@ footer {
 
 @media (max-width: $tablet_width) {
     footer {
+
         .footer__find_error {
 
             &:before {

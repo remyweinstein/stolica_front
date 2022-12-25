@@ -1,0 +1,58 @@
+.select_store_button {
+    position: relative;
+    display: inline-block;
+    font-size: 1.125em;
+    border: 1px solid #333333;
+    border-radius: 2em;
+    height: 3.125em;
+    line-height: 3.125em;
+    width: fit-content;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #ebebeb;
+    }
+
+    &.active {
+        color: #fff;
+        background-color: $text_color;
+
+        .icon {
+            @include icon_navy_white;
+        }
+    }
+
+    &.selected {
+        border-radius: 2em;
+        background: linear-gradient(#f6f6f6, #f6f6f6) padding-box,
+        linear-gradient(to right, #1F9363, #364ABC) border-box;
+        border: 1px solid transparent;
+
+        .text {
+            background: -webkit-linear-gradient(126.91deg,  #1F9363, #364ABC);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .icon {
+            @include icon_navy_gradient;
+        }
+    }
+
+    .text {
+        padding-left: 1em;
+        margin-right: 3em;
+    }
+
+    .icon {
+        position: relative;
+        display: inline-block;
+        right: 15px;
+        top: 0.2em;
+        border: none;
+        width: 21px;
+        height: 21px;
+        @include icon_navy_grey;
+        background-repeat: no-repeat;
+    }
+}

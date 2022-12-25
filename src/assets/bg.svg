@@ -1,0 +1,28 @@
+<svg width="2550" height="1200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="filter0_40_580" x="0" y="0" width="2550" height="1200" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur result="gaussian-blur-1" in="none" stdDeviation="40"></feGaussianBlur>
+      <feGaussianBlur stdDeviation="40" result="gaussian-blur-0" in="SourceGraphic"></feGaussianBlur>
+    </filter>
+    <linearGradient id="paint0_linear_42_581" x1="-0.17581" y1="0.30502" x2="0.97435" y2="-0.09245">
+      <stop stop-color="#364ABC"></stop>
+      <stop offset="1" stop-color="#1F9363"></stop>
+    </linearGradient>
+  </defs>
+  <g>
+    <title>background</title>
+    <rect x="-1" y="-1" width="2552" height="1202" id="canvas_background" fill="none"></rect>
+  </g>
+  <g>
+    <title>Layer 1</title>
+	<path fill-rule="evenodd" clip-rule="evenodd" d="M 1008.987 786.425 C 840.217 627.122 794.405 395.711 871.552 197.262 L 1253 293.737 C 1207.449 367.185 1218.042 463.108 1284.781 526.103 C 1364.113 600.983 1492.736 600.983 1572.067 526.103 C 1612.013 488.398 1631.845 438.899 1631.564 389.482 L 2012.97 485.946 C 1992.905 595.99 1937.876 701.462 1847.865 786.425 C 1616.212 1005.078 1240.636 1005.078 1008.987 786.425 Z" fill="url(#paint0_linear_42_581)" id="svg_1" style="" filter="url(#filter0_40_580)"></path>
+  </g>
+  <g>
+    <title>Layer 2</title>
+    <rect x="0" y="0" fill-opacity="0.4" fill="#F6F6F6" height="1200" width="2550" id="svg_2"></rect>
+  </g>
+  <g>
+    <title>Layer 3</title>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="m628.204,847.272549l320.538,320.541c179.108,-160.742 263.498,-413.996 196.948,-662.366c-94.32,-352.028 -456.164,-560.938 -808.193,-466.6122c-128.619,34.4635 -238.1332,104.6382 -320.73248,196.9982l320.52848,320.528c27.169,-38.797 67.618,-68.615 116.948,-81.833c111.402,-29.85 225.909,36.261 255.759,147.662c23.343,87.12 -12,176.138 -81.796,225.082z" fill="white" id="svg_3" stroke="null"></path>
+  </g>
+</svg>

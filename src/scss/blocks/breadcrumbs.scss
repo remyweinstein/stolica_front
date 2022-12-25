@@ -1,0 +1,42 @@
+.breadcrumbs {
+    margin-top: 2.5em;
+    li {
+        font-size: 0.875em;
+        display: inline-block;
+
+        a {
+            color: #8d8d8d;
+            padding-right: 2.25em;
+            margin-right: 1.25em;
+            position: relative;
+
+            &:after {
+                content: "";
+                width: 12px;
+                height: 8px;
+                display: inline-block;
+                position: absolute;
+                right: 0;
+                top: 6px;
+                background-repeat: no-repeat;
+                @include icon_small_arrow;
+            }
+
+            &:hover {
+                color: #333333;
+            }
+        }
+
+        &:last-child {
+            color: #cdcdcd;
+
+            a {
+                color: #cdcdcd;
+
+                &:after {
+                    content: none;
+                }
+            }
+        }
+    }
+}

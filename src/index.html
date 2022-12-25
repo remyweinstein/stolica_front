@@ -22,7 +22,7 @@
       <div class="header_top_panel">
         <div class="header_top_panel__city">
           <div><a href="tel:88006000401">8 800 6000-401</a></div>
-          <div>Хабаровск</div>
+          <div class="city_title">Хабаровск</div>
         </div>
         <ul class="header_top_panel__menu">
           <li><a href="#">Корпоративным клиентам</a></li>
@@ -36,7 +36,7 @@
           <input type="text" name="search" value="" />
           <button></button>
         </div>
-        <div class="header_search_panel__store">
+        <div class="select_store_button">
           <span class="text">Магазин самовывоза</span>
           <span class="icon"></span>
         </div>
@@ -302,35 +302,35 @@
       </div>
     </div>
   </header>
-  <main>
-    <div class="overlay">
-      <div class="instock_stores">
-        <div class="instock_stores__cities">
-          <h3 class="select_city_title">Выберите магазин самовывоза</h3>
-          <h3 class="instock_title">Наличие в магазинах</h3>
-          <ul></ul>
-          <p class="select_city_attention">Мы покажем ассортимент только по выбранному магазину.</p>
-          <p class="instock_attention">В наличии в 20 из 22 магазинах</p>
-          <button class="button selected" id="select_store"><span class="text">Применить</span></button>
-          <button class="button" id="close_store"><span class="text">Закрыть</span></button>
-        </div>
-        <div class="instock_stores__stores">
-          <div class="instock_stores__stores_list">
-              <div class="instock_stores__stores_list_filters">
-                <div class="search__input">
-                  <input type="text" name="search" value="">
-                  <button></button>
-                </div>
-                <div class="filter_sort"></div>
+  <div class="overlay">
+    <div class="instock_stores">
+      <div class="instock_stores__cities">
+        <h3 class="select_city_title">Выберите магазин самовывоза</h3>
+        <h3 class="instock_title">Наличие в магазинах</h3>
+        <ul></ul>
+        <p class="select_city_attention">Мы покажем ассортимент только по выбранному магазину.</p>
+        <p class="instock_attention">В наличии в 20 из 22 магазинах</p>
+        <button class="button selected" id="select_store"><span class="text">Применить</span></button>
+        <button class="button" id="close_store"><span class="text">Закрыть</span></button>
+      </div>
+      <div class="instock_stores__stores">
+        <div class="instock_stores__stores_list">
+            <div class="instock_stores__stores_list_filters">
+              <div class="search__input">
+                <input type="text" name="search" value="">
+                <button></button>
               </div>
-            <ul></ul>
-          </div>
-          <div class="instock_stores__stores_map">
-            <div id="map"></div>
-          </div>
+              <div class="filter_sort"></div>
+            </div>
+          <ul></ul>
+        </div>
+        <div class="instock_stores__stores_map">
+          <div id="map"></div>
         </div>
       </div>
     </div>
+  </div>
+  <div class="main">
     <div class="wrapper">
       <div class="mainpage_banners">
         <div class="banner">
@@ -646,7 +646,7 @@
         </ul>
       </div>
     </div>
-  </main>
+  </div>
   <footer>
     <div class="wrapper">
       <div class="footer__find_error">Заметили ошибку? Выделите текст ошибки, нажмите Ctrl + Enter, отправьте форму, мы постараемся исправить её.</div>

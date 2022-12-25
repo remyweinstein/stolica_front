@@ -1,0 +1,28 @@
+<svg width="2550" height="1200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="filter0_40_580" x="0" y="0" width="2550" height="1200" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur result="gaussian-blur-1" in="none" stdDeviation="40"></feGaussianBlur>
+      <feGaussianBlur stdDeviation="40" result="gaussian-blur-0" in="SourceGraphic"></feGaussianBlur>
+    </filter>
+    <linearGradient id="paint0_linear_42_581" x1="-0.17581" y1="0.30502" x2="0.97435" y2="-0.09245">
+      <stop stop-color="#364ABC"></stop>
+      <stop offset="1" stop-color="#1F9363"></stop>
+    </linearGradient>
+  </defs>
+  <g>
+    <title>background</title>
+    <rect x="-1" y="-1" width="2552" height="1202" id="canvas_background" fill="none"></rect>
+  </g>
+  <g>
+    <title>Layer 1</title>
+    <path d="M 1164.41 971.034 C 988.95 793.181 941.323 534.821 1021.527 313.262 L 1418.095 420.972 C 1370.739 502.974 1381.752 610.066 1451.137 680.398 C 1533.613 763.999 1667.334 763.999 1749.81 680.398 C 1791.339 638.302 1811.957 583.038 1811.665 527.867 L 2208.189 635.564 C 2187.329 758.424 2130.119 876.179 2036.539 971.034 C 1795.705 1215.151 1405.241 1215.151 1164.41 971.034 L 1164.41 971.034 Z" id="svg_1" style="" clip-rule="evenodd" fill="url(#paint0_linear_42_581)" filter="url(#filter0_40_580)" fill-rule="evenodd"></path>
+  </g>
+  <g>
+    <title>Layer 2</title>
+    <rect x="0" y="0" fill-opacity="0.4" fill="#F6F6F6" height="1200" width="2550" id="svg_2"></rect>
+  </g>
+  <g>
+    <title>Layer 3</title>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="m628.204,847.272549l320.538,320.541c179.108,-160.742 263.498,-413.996 196.948,-662.366c-94.32,-352.028 -456.164,-560.938 -808.193,-466.6122c-128.619,34.4635 -238.1332,104.6382 -320.73248,196.9982l320.52848,320.528c27.169,-38.797 67.618,-68.615 116.948,-81.833c111.402,-29.85 225.909,36.261 255.759,147.662c23.343,87.12 -12,176.138 -81.796,225.082z" fill="white" id="svg_3" stroke="null"></path>
+  </g>
+</svg>

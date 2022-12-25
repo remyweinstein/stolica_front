@@ -111,10 +111,21 @@ S('.header_search_panel .actions_button.search').bind('click', (e) => {
     }
 });
 
-let current_store = localStorage.getItem('current_store');
+const current_store = localStorage.getItem('current_store');
 if (current_store) {
     const store = Stores.filter(el => el.rsa_id == current_store);
     const address = store[0].store_title.split(',');
-    S('.header_search_panel__store .text').text(`${address[1]}, ${address[2]}`);
-    S('.header_search_panel__store').addclass('selected');
+    S('.select_store_button .text').text(`${address[1]}, ${address[2]}`);
+    S('.select_store_button').addclass('selected');
 }
+
+const current_city = localStorage.getItem('current_city');
+if (current_city) {
+    const store = Stores.filter(el => el.id == current_city);
+    S('.city_title').text(store[0].title);
+}
+
+S('.dropdown_sort').bind('click', (e) => {
+    const el = e.currentTarget;
+    S(el).togclass('open');
+});
