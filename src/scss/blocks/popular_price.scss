@@ -1,0 +1,30 @@
+.popular_prices_buttons { 
+    white-space: normal;
+
+    li {
+        border: 1px solid #cdcdcd;
+        border-radius: 2em;
+        padding: 0.45em 1em;
+        display: inline-block;
+        cursor: pointer;
+        margin-bottom: 0.5em;
+
+        &:hover {
+            background-color: #ebebeb;
+        }
+
+        &.active {
+            color: #fff;
+            @include main_gradient;
+        }
+
+        &.disabled {
+            color: #8d8d8d;
+            cursor: initial;
+
+            &:hover {
+                background: none;
+            }
+        }
+    }
+}
