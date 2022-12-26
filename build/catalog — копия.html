@@ -330,323 +330,365 @@
       </div>
     </div>
   </div>
-  <div class="main">
-    <div class="wrapper">
-      <div class="mainpage_banners">
-        <div class="banner">
-          <ul>
-            <li>
-              <div class="banner_content">
-                <h1>Вина с высоким рейтингом до 1 000 ₽</h1>
-                <p>Вино — один из любимых алкогольных напитков по всему миру. Это замечательное дополнение к праздничному столу и даже к обычному ужину.</p>
-              </div>
-              <img src="assets/banners/banner_1.jpg" alt="banner_1" />
-            </li>
-            <li>
-              <div class="banner_content">
-                <h1>Вина с высоким рейтингом до 1 000 ₽</h1>
-                <p>Вино — один из любимых алкогольных напитков по всему миру. Это замечательное дополнение к праздничному столу и даже к обычному ужину.</p>
-              </div>
-              <img src="assets/banners/banner_1.jpg" alt="banner_1" />
-              <button class="button_arrow">Подробнее</button>
-            </li>
-          </ul>
-          <div class="banner_navigation">
-            <span class="but_next_prev prev"><span></span></span>
-            <span><span class="banner_navigation_cur_page">1</span> из <span class="banner_navigation_all_page"></span></span>
-            <span class="but_next_prev next"><span></span></span>
+  <div class="wrapper">
+    <ol class="breadcrumbs">
+        <li><a href="#">Главная</a></li>
+        <li><a href="#">Каталог</a></li>
+        <li>Вино и шампанское</li>
+    </ol>
+    <div class="catalog">
+        <h1>Вино и шампанское</h1>
+        <div class="catalog_sortings">
+          <div class="select_store_button">
+            <span class="text">Магазин самовывоза</span>
+            <span class="icon"></span>
           </div>
-        </div>
-        <div class="mainpage_banners__adv">
-          <div>
-            <p class="mainpage_banners__adv__top">Копите бонусы и оплачивайте ими покупки!</p>
-            <ul class="two">
-              <li><p class="mainpage_banners__adv__header">до 50%</p>
-                скидки бонусами
-              </li>
-              <li><p class="mainpage_banners__adv__header">до 15%</p>
-                вернём бонусами
-              </li>
+          <div class="dropdown_sort">
+            <div>Сначала популярные</div>
+            <ul>
+                <li><a href="#" class="active">Сначала популярные</a></li>
+                <li><a href="#">Сначала дешевле</a></li>
+                <li><a href="#">Сначала дороже</a></li>
+                <li><a href="#">По остатку в магазине</a></li>
+                <li><a href="#">По самой большой скидке</a></li>
             </ul>
-            <ul class="one">
-              <li><p class="mainpage_banners__adv__header">+2 000 бонусов</p>
-                при регистрации
-              </li>
-              <li><p class="mainpage_banners__adv__header">+1 000 бонусов</p>
-                в День рождения
-              </li>
-            </ul>
-          <button class="button_arrow">Войти</button>
           </div>
         </div>
-      </div>
-      <div class="offers">
-        <div class="offers_header">
-          <h3>Рекомендуем</h3>
-          <a href="#">В каталог</a>
-          <div class="progress_bar">
-            <span class="progress_bar__line">
-              <span class="progress_bar__line_slider"></span>
-            </span>
-            <span class="but_next_prev prev disabled"><span></span></span>
-            <span class="but_next_prev next"><span></span></span>
-          </div>
+        <div class="catalog_main">
+            <aside>
+                <div class="catalog_offers">
+                    <p>Только товары по акциям</p>
+                    <a href="#" class="active">Каскад скидок</a>
+                    <a href="#">2 по цене 1</a>
+                </div>
+                <div class="catalog_aside_filter enabled open">
+                    <div class="catalog_aside_filter__head">
+                        <span class="catalog_aside_filter__head_title">Цена, ₽</span>
+                        <span class="catalog_aside_filter__head_qty">3</span>
+                        <span class="button_close_filter"></span>
+                    </div>
+                    <div class="catalog_aside_filter__content">
+                        <div class="range_price">
+                            <span>от</span>
+                            <input type="number" name="price_ot"/>
+                            <span>до</span>
+                            <input type="number" name="price_do"/>
+                        </div>
+                        <div class="popular_prices">
+                            <p>Популярные диапазоны цен, ₽</p>
+                            <ul class="popular_prices_buttons">
+                                <li class="disabled">До 1 000</li>
+                                <li class="active">1 000 — 3 000</li>
+                                <li>3 000 — 6 000</li>
+                                <li>от 6 000</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="catalog_aside_filter enabled open">
+                    <div class="catalog_aside_filter__head">
+                        <span class="catalog_aside_filter__head_title">Страна</span>
+                        <span class="catalog_aside_filter__head_qty">5</span>
+                        <span class="button_close_filter"></span>
+                    </div>
+                    <div class="catalog_aside_filter__content">
+                        <div class="search__input">
+                            <input type="text" name="search" value="">
+                            <button></button>
+                        </div>
+                        <ul class="filter_list">
+                            <li><input id="country_value1" type="checkbox" value="value1" name="country"><label for="country_value1"><span></span>Австрия</label></li>
+                            <li><input id="country_value2" type="checkbox" value="value2" name="country"><label for="country_value2"><span></span>Бельгия</label></li>
+                            <li><input id="country_value3" type="checkbox" value="value3" name="country"><label for="country_value3"><span></span>Болгария</label></li>
+                            <li><input id="country_value4" type="checkbox" value="value4" name="country"><label for="country_value4"><span></span>Дания</label></li>
+                            <li><input id="country_value5" type="checkbox" value="value5" name="country"><label for="country_value5"><span></span>Италия</label></li>
+                            <li><input id="country_value6" type="checkbox" value="value6" name="country"><label for="country_value6"><span></span>Андорра</label></li>
+                            <li><input id="country_value7" type="checkbox" value="value7" name="country"><label for="country_value7"><span></span>Армения</label></li>
+                            <li><input id="country_value8" type="checkbox" value="value8" name="country"><label for="country_value8"><span></span>Венгрия</label></li>
+                            <li><input id="country_value9" type="checkbox" value="value9" name="country"><label for="country_value9"><span></span>Испания</label></li>
+                            <li><input id="country_value10" type="checkbox" value="value10" name="country"><label for="country_value10"><span></span>Португалия</label></li>
+                            <li><input id="country_value11" type="checkbox" value="value11" name="country"><label for="country_value11"><span></span>Франция</label></li>
+                            <li><input id="country_value12" type="checkbox" value="value12" name="country"><label for="country_value12"><span></span>Германия</label></li>
+                            <li><input id="country_value13" type="checkbox" value="value13" name="country"><label for="country_value13"><span></span>Польша</label></li>
+                            <li><input id="country_value14" type="checkbox" value="value14" name="country"><label for="country_value14"><span></span>Черногория</label></li>
+                            <li><input id="country_value15" type="checkbox" value="value15" name="country"><label for="country_value15"><span></span>Абхазия</label></li>
+                            <li><input id="country_value16" type="checkbox" value="value16" name="country"><label for="country_value16"><span></span>Россия</label></li>
+                            <li><input id="country_value17" type="checkbox" value="value17" name="country"><label for="country_value17"><span></span>Молдавия</label></li>
+                            <li><input id="country_value18" type="checkbox" value="value18" name="country"><label for="country_value18"><span></span>Великобритания</label></li>
+                            <li><input id="country_value19" type="checkbox" value="value19" name="country"><label for="country_value19"><span></span>Грузия</label></li>
+                            <li><input id="country_value20" type="checkbox" value="value20" name="country"><label for="country_value20"><span></span>Чили</label></li>
+                            <li><input id="country_value21" type="checkbox" value="value21" name="country"><label for="country_value21"><span></span>Австралия</label></li>
+                            <li><input id="country_value22" type="checkbox" value="value22" name="country"><label for="country_value22"><span></span>США</label></li>
+                            <li><input id="country_value23" type="checkbox" value="value23" name="country"><label for="country_value23"><span></span>Аргентина</label></li>
+                            <li><input id="country_value24" type="checkbox" value="value24" name="country"><label for="country_value24"><span></span>Греция</label></li>
+                            <li><input id="country_value25" type="checkbox" value="value25" name="country"><label for="country_value25"><span></span>Кипр</label></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="catalog_aside_filter enabled">
+                    <div class="catalog_aside_filter__head">
+                        <span class="catalog_aside_filter__head_title">Объём, л</span>
+                        <span class="catalog_aside_filter__head_qty">5</span>
+                        <span class="button_close_filter"></span>
+                    </div>
+                    <div class="catalog_aside_filter__content"></div>
+                </div>
+                <div class="catalog_aside_filter enabled">
+                    <div class="catalog_aside_filter__head">
+                        <span class="catalog_aside_filter__head_title">Бренд</span>
+                        <span class="catalog_aside_filter__head_qty">5</span>
+                        <span class="button_close_filter"></span>
+                    </div>
+                    <div class="catalog_aside_filter__content"></div>
+                </div>
+                <div class="catalog_aside_filter enabled">
+                    <div class="catalog_aside_filter__head">
+                        <span class="catalog_aside_filter__head_title">Сахар</span>
+                        <span class="catalog_aside_filter__head_qty">5</span>
+                        <span class="button_close_filter"></span>
+                    </div>
+                    <div class="catalog_aside_filter__content"></div>
+                </div>
+                <div class="catalog_aside_filter enabled">
+                    <div class="catalog_aside_filter__head">
+                        <span class="catalog_aside_filter__head_title">Крепость, %</span>
+                        <span class="catalog_aside_filter__head_qty">5</span>
+                        <span class="button_close_filter"></span>
+                    </div>
+                    <div class="catalog_aside_filter__content"></div>
+                </div>
+                <div class="catalog_aside_filter">
+                    <div class="catalog_aside_filter__head">
+                        <span class="catalog_aside_filter__head_title">Цвет</span>
+                        <span class="catalog_aside_filter__head_qty">5</span>
+                        <span class="button_close_filter"></span>
+                    </div>
+                    <div class="catalog_aside_filter__content"></div>
+                </div>
+            </aside>
+            <main>
+                <div class="catalog_selected_filters">
+                    <span>Цена<span class="button_close_filter"></span></span>
+                    <span>Страна<span class="button_close_filter"></span></span>
+                    <span>Объём<span class="button_close_filter"></span></span>
+                    <span>Бренд<span class="button_close_filter"></span></span>
+                    <span>Сахар<span class="button_close_filter"></span></span>
+                    <span>Крепость<span class="button_close_filter"></span></span>
+                </div>
+                <div class="catalog_products">
+                    <div class="catalog_product">
+                        <div class="catalog_product__img">
+                            <img src="assets/products/product_1.png" alt="product_1" />
+                            <div class="discount">25%</div>
+                            <div class="fav"></div>
+                        </div>
+                        <div class="catalog_product__country">Грузия</div>
+                        <div class="catalog_product__title">Вилла Бланка Москато</div>
+                        <div class="catalog_product__desc">Напиток с/а, газ., 0,75 л</div>
+                        <div class="catalog_product__price">544 ₽<span>900 ₽</span></div>
+                        <div class="catalog_product__actions">
+                            <div class="instock">
+                            <span>В 20 из 22 магазинах</span>
+                            </div>
+                            <div class="incart"><div>1</div></div>
+                        </div>
+                    </div>
+                    <div class="catalog_product">
+                        <div class="catalog_product__img">
+                            <img src="assets/products/product_1.png" alt="product_1" />
+                            <div class="discount">25%</div>
+                            <div class="fav"></div>
+                        </div>
+                        <div class="catalog_product__country">Грузия</div>
+                        <div class="catalog_product__title">Вилла Бланка Москато</div>
+                        <div class="catalog_product__desc">Напиток с/а, газ., 0,75 л</div>
+                        <div class="catalog_product__price">544 ₽<span>900 ₽</span></div>
+                        <div class="catalog_product__actions">
+                            <div class="instock">
+                            <span>В 20 из 22 магазинах</span>
+                            </div>
+                            <div class="incart"><div>1</div></div>
+                        </div>
+                    </div>
+                    <div class="catalog_product">
+                        <div class="catalog_product__img">
+                            <img src="assets/products/product_1.png" alt="product_1" />
+                            <div class="discount">25%</div>
+                            <div class="fav"></div>
+                        </div>
+                        <div class="catalog_product__country">Грузия</div>
+                        <div class="catalog_product__title">Вилла Бланка Москато</div>
+                        <div class="catalog_product__desc">Напиток с/а, газ., 0,75 л</div>
+                        <div class="catalog_product__price">544 ₽<span>900 ₽</span></div>
+                        <div class="catalog_product__actions">
+                            <div class="instock">
+                            <span>В 20 из 22 магазинах</span>
+                            </div>
+                            <div class="incart"><div>1</div></div>
+                        </div>
+                    </div>
+                    <div class="catalog_product">
+                        <div class="catalog_product__img">
+                            <img src="assets/products/product_1.png" alt="product_1" />
+                            <div class="discount">25%</div>
+                            <div class="fav"></div>
+                        </div>
+                        <div class="catalog_product__country">Грузия</div>
+                        <div class="catalog_product__title">Вилла Бланка Москато</div>
+                        <div class="catalog_product__desc">Напиток с/а, газ., 0,75 л</div>
+                        <div class="catalog_product__price">544 ₽<span>900 ₽</span></div>
+                        <div class="catalog_product__actions">
+                            <div class="instock">
+                            <span>В 20 из 22 магазинах</span>
+                            </div>
+                            <div class="incart"><div>1</div></div>
+                        </div>
+                    </div>
+                    <div class="catalog_product">
+                        <div class="catalog_product__img">
+                            <img src="assets/products/product_1.png" alt="product_1" />
+                            <div class="discount">25%</div>
+                            <div class="fav"></div>
+                        </div>
+                        <div class="catalog_product__country">Грузия</div>
+                        <div class="catalog_product__title">Вилла Бланка Москато</div>
+                        <div class="catalog_product__desc">Напиток с/а, газ., 0,75 л</div>
+                        <div class="catalog_product__price">544 ₽<span>900 ₽</span></div>
+                        <div class="catalog_product__actions">
+                            <div class="instock">
+                            <span>В 20 из 22 магазинах</span>
+                            </div>
+                            <div class="incart"><div>1</div></div>
+                        </div>
+                    </div>
+                    <div class="catalog_product">
+                        <div class="catalog_product__img">
+                            <img src="assets/products/product_1.png" alt="product_1" />
+                            <div class="discount">25%</div>
+                            <div class="fav"></div>
+                        </div>
+                        <div class="catalog_product__country">Грузия</div>
+                        <div class="catalog_product__title">Вилла Бланка Москато</div>
+                        <div class="catalog_product__desc">Напиток с/а, газ., 0,75 л</div>
+                        <div class="catalog_product__price">544 ₽<span>900 ₽</span></div>
+                        <div class="catalog_product__actions">
+                            <div class="instock">
+                            <span>В 20 из 22 магазинах</span>
+                            </div>
+                            <div class="incart"><div>1</div></div>
+                        </div>
+                    </div>
+                    <div class="catalog_product">
+                        <div class="catalog_product__img">
+                            <img src="assets/products/product_1.png" alt="product_1" />
+                            <div class="discount">25%</div>
+                            <div class="fav"></div>
+                        </div>
+                        <div class="catalog_product__country">Грузия</div>
+                        <div class="catalog_product__title">Вилла Бланка Москато</div>
+                        <div class="catalog_product__desc">Напиток с/а, газ., 0,75 л</div>
+                        <div class="catalog_product__price">544 ₽<span>900 ₽</span></div>
+                        <div class="catalog_product__actions">
+                            <div class="instock">
+                            <span>В 20 из 22 магазинах</span>
+                            </div>
+                            <div class="incart"><div>1</div></div>
+                        </div>
+                    </div>
+                    <div class="catalog_product">
+                        <div class="catalog_product__img">
+                            <img src="assets/products/product_1.png" alt="product_1" />
+                            <div class="discount">25%</div>
+                            <div class="fav"></div>
+                        </div>
+                        <div class="catalog_product__country">Грузия</div>
+                        <div class="catalog_product__title">Вилла Бланка Москато</div>
+                        <div class="catalog_product__desc">Напиток с/а, газ., 0,75 л</div>
+                        <div class="catalog_product__price">544 ₽<span>900 ₽</span></div>
+                        <div class="catalog_product__actions">
+                            <div class="instock">
+                            <span>В 20 из 22 магазинах</span>
+                            </div>
+                            <div class="incart"><div>1</div></div>
+                        </div>
+                    </div>
+                    <div class="catalog_product">
+                        <div class="catalog_product__img">
+                            <img src="assets/products/product_1.png" alt="product_1" />
+                            <div class="discount">25%</div>
+                            <div class="fav"></div>
+                        </div>
+                        <div class="catalog_product__country">Грузия</div>
+                        <div class="catalog_product__title">Вилла Бланка Москато</div>
+                        <div class="catalog_product__desc">Напиток с/а, газ., 0,75 л</div>
+                        <div class="catalog_product__price">544 ₽<span>900 ₽</span></div>
+                        <div class="catalog_product__actions">
+                            <div class="instock">
+                            <span>В 20 из 22 магазинах</span>
+                            </div>
+                            <div class="incart"><div>1</div></div>
+                        </div>
+                    </div>
+                    <div class="catalog_product">
+                        <div class="catalog_product__img">
+                            <img src="assets/products/product_1.png" alt="product_1" />
+                            <div class="discount">25%</div>
+                            <div class="fav"></div>
+                        </div>
+                        <div class="catalog_product__country">Грузия</div>
+                        <div class="catalog_product__title">Вилла Бланка Москато</div>
+                        <div class="catalog_product__desc">Напиток с/а, газ., 0,75 л</div>
+                        <div class="catalog_product__price">544 ₽<span>900 ₽</span></div>
+                        <div class="catalog_product__actions">
+                            <div class="instock">
+                            <span>В 20 из 22 магазинах</span>
+                            </div>
+                            <div class="incart"><div>1</div></div>
+                        </div>
+                    </div>
+                    <div class="catalog_product">
+                        <div class="catalog_product__img">
+                            <img src="assets/products/product_1.png" alt="product_1" />
+                            <div class="discount">25%</div>
+                            <div class="fav"></div>
+                        </div>
+                        <div class="catalog_product__country">Грузия</div>
+                        <div class="catalog_product__title">Вилла Бланка Москато</div>
+                        <div class="catalog_product__desc">Напиток с/а, газ., 0,75 л</div>
+                        <div class="catalog_product__price">544 ₽<span>900 ₽</span></div>
+                        <div class="catalog_product__actions">
+                            <div class="instock">
+                            <span>В 20 из 22 магазинах</span>
+                            </div>
+                            <div class="incart"><div>1</div></div>
+                        </div>
+                    </div>
+                    <div class="catalog_product">
+                        <div class="catalog_product__img">
+                            <img src="assets/products/product_1.png" alt="product_1" />
+                            <div class="discount">25%</div>
+                            <div class="fav"></div>
+                        </div>
+                        <div class="catalog_product__country">Грузия</div>
+                        <div class="catalog_product__title">Вилла Бланка Москато</div>
+                        <div class="catalog_product__desc">Напиток с/а, газ., 0,75 л</div>
+                        <div class="catalog_product__price">544 ₽<span>900 ₽</span></div>
+                        <div class="catalog_product__actions">
+                            <div class="instock">
+                            <span>В 20 из 22 магазинах</span>
+                            </div>
+                            <div class="incart"><div>1</div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="catalog_pagination">
+                    <span class="catalog_pagination__pages">16 из 254 товаров</span>
+                    <span class="catalog_pagination__add"><span>Ещё 16</span></span>
+                </div>
+            </main>
         </div>
-        <ul class="offers_list">
-          <li class="catalog_product">
-            <div class="catalog_product__img">
-              <img src="assets/products/product_1.png" alt="product_1" />
-              <div class="discount">25%</div>
-              <div class="fav"></div>
-            </div>
-            <div class="catalog_product__country">Грузия</div>
-            <div class="catalog_product__title">Вилла Бланка Москато</div>
-            <div class="catalog_product__desc">Напиток с/а, газ., 0,75 л</div>
-            <div class="catalog_product__price">544 ₽<span>900 ₽</span></div>
-            <div class="catalog_product__actions">
-              <div class="instock">
-                <span>В 20 из 22 магазинах</span>
-              </div>
-              <div class="incart"><div>1</div></div>
-            </div>
-          </li>
-          <li class="catalog_product">
-            <div class="catalog_product__img">
-              <img src="assets/products/product_1.png" alt="product_1" />
-              <div class="discount">25%</div>
-              <div class="fav"></div>
-            </div>
-            <div class="catalog_product__country">Грузия</div>
-            <div class="catalog_product__title">Вилла Бланка Москато</div>
-            <div class="catalog_product__desc">Напиток с/а, газ., 0,75 л</div>
-            <div class="catalog_product__price">544 ₽<span>900 ₽</span></div>
-            <div class="catalog_product__actions">
-              <div class="instock">
-                <span>В 20 из 22 магазинах</span>
-              </div>
-              <div class="incart"><div>1</div></div>
-            </div>
-          </li>          <li class="catalog_product">
-            <div class="catalog_product__img">
-              <img src="assets/products/product_1.png" alt="product_1" />
-              <div class="discount">25%</div>
-              <div class="fav"></div>
-            </div>
-            <div class="catalog_product__country">Грузия</div>
-            <div class="catalog_product__title">Вилла Бланка Москато</div>
-            <div class="catalog_product__desc">Напиток с/а, газ., 0,75 л</div>
-            <div class="catalog_product__price">544 ₽<span>900 ₽</span></div>
-            <div class="catalog_product__actions">
-              <div class="instock">
-                <span>В 20 из 22 магазинах</span>
-              </div>
-              <div class="incart"><div>1</div></div>
-            </div>
-          </li>
-          <li class="catalog_product">
-            <div class="catalog_product__img">
-              <img src="assets/products/product_1.png" alt="product_1" />
-              <div class="discount">25%</div>
-              <div class="fav"></div>
-            </div>
-            <div class="catalog_product__country">Грузия</div>
-            <div class="catalog_product__title">Вилла Бланка Москато</div>
-            <div class="catalog_product__desc">Напиток с/а, газ., 0,75 л</div>
-            <div class="catalog_product__price">544 ₽<span>900 ₽</span></div>
-            <div class="catalog_product__actions">
-              <div class="instock">
-                <span>В 20 из 22 магазинах</span>
-              </div>
-              <div class="incart"><div>1</div></div>
-            </div>
-          </li>
-          <li class="catalog_product">
-            <div class="catalog_product__img">
-              <img src="assets/products/product_1.png" alt="product_1" />
-              <div class="discount">25%</div>
-              <div class="fav"></div>
-            </div>
-            <div class="catalog_product__country">Грузия</div>
-            <div class="catalog_product__title">Вилла Бланка Москато</div>
-            <div class="catalog_product__desc">Напиток с/а, газ., 0,75 л</div>
-            <div class="catalog_product__price">544 ₽<span>900 ₽</span></div>
-            <div class="catalog_product__actions">
-              <div class="instock">
-                <span>В 20 из 22 магазинах</span>
-              </div>
-              <div class="incart"><div>1</div></div>
-            </div>
-          </li>          <li class="catalog_product">
-            <div class="catalog_product__img">
-              <img src="assets/products/product_1.png" alt="product_1" />
-              <div class="discount">25%</div>
-              <div class="fav"></div>
-            </div>
-            <div class="catalog_product__country">Грузия</div>
-            <div class="catalog_product__title">Вилла Бланка Москато</div>
-            <div class="catalog_product__desc">Напиток с/а, газ., 0,75 л</div>
-            <div class="catalog_product__price">544 ₽<span>900 ₽</span></div>
-            <div class="catalog_product__actions">
-              <div class="instock">
-                <span>В 20 из 22 магазинах</span>
-              </div>
-              <div class="incart"><div>1</div></div>
-            </div>
-          </li>
-          <li class="catalog_product">
-            <div class="catalog_product__img">
-              <img src="assets/products/product_1.png" alt="product_1" />
-              <div class="discount">25%</div>
-              <div class="fav"></div>
-            </div>
-            <div class="catalog_product__country">Грузия</div>
-            <div class="catalog_product__title">Вилла Бланка Москато</div>
-            <div class="catalog_product__desc">Напиток с/а, газ., 0,75 л</div>
-            <div class="catalog_product__price">544 ₽<span>900 ₽</span></div>
-            <div class="catalog_product__actions">
-              <div class="instock">
-                <span>В 20 из 22 магазинах</span>
-              </div>
-              <div class="incart">
-                <div>1</div>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="offers">
-        <div class="offers_header">
-          <h3>Лучшие предложения</h3>
-          <span>&nbsp;</span>
-          <div class="progress_bar">
-            <span class="progress_bar__line">
-              <span class="progress_bar__line_slider"></span>
-            </span>
-            <span class="but_next_prev prev disabled"><span></span></span>
-            <span class="but_next_prev next"><span></span></span>
-          </div>
-        </div>
-        <ul class="offers_list">
-          <li class="catalog_product">
-            <div class="catalog_product__img">
-              <img src="assets/products/product_1.png" alt="product_1" />
-              <div class="discount">25%</div>
-              <div class="fav"></div>
-            </div>
-            <div class="catalog_product__country">Грузия</div>
-            <div class="catalog_product__title">Вилла Бланка Москато</div>
-            <div class="catalog_product__desc">Напиток с/а, газ., 0,75 л</div>
-            <div class="catalog_product__price">544 ₽<span>900 ₽</span></div>
-            <div class="catalog_product__actions">
-              <div class="instock">
-                <span>В 20 из 22 магазинах</span>
-              </div>
-              <div class="incart"><div>1</div></div>
-            </div>
-          </li>
-          <li class="catalog_product">
-            <div class="catalog_product__img">
-              <img src="assets/products/product_1.png" alt="product_1" />
-              <div class="discount">25%</div>
-              <div class="fav"></div>
-            </div>
-            <div class="catalog_product__country">Грузия</div>
-            <div class="catalog_product__title">Вилла Бланка Москато</div>
-            <div class="catalog_product__desc">Напиток с/а, газ., 0,75 л</div>
-            <div class="catalog_product__price">544 ₽<span>900 ₽</span></div>
-            <div class="catalog_product__actions">
-              <div class="instock">
-                <span>В 20 из 22 магазинах</span>
-              </div>
-              <div class="incart"><div>1</div></div>
-            </div>
-          </li>
-          <li class="catalog_product">
-            <div class="catalog_product__img">
-              <img src="assets/products/product_1.png" alt="product_1" />
-              <div class="discount">25%</div>
-              <div class="fav"></div>
-            </div>
-            <div class="catalog_product__country">Грузия</div>
-            <div class="catalog_product__title">Вилла Бланка Москато</div>
-            <div class="catalog_product__desc">Напиток с/а, газ., 0,75 л</div>
-            <div class="catalog_product__price">544 ₽<span>900 ₽</span></div>
-            <div class="catalog_product__actions">
-              <div class="instock">
-                <span>В 20 из 22 магазинах</span>
-              </div>
-              <div class="incart"><div>1</div></div>
-            </div>
-          </li>          <li class="catalog_product">
-            <div class="catalog_product__img">
-              <img src="assets/products/product_1.png" alt="product_1" />
-              <div class="discount">25%</div>
-              <div class="fav"></div>
-            </div>
-            <div class="catalog_product__country">Грузия</div>
-            <div class="catalog_product__title">Вилла Бланка Москато</div>
-            <div class="catalog_product__desc">Напиток с/а, газ., 0,75 л</div>
-            <div class="catalog_product__price">544 ₽<span>900 ₽</span></div>
-            <div class="catalog_product__actions">
-              <div class="instock">
-                <span>В 20 из 22 магазинах</span>
-              </div>
-              <div class="incart"><div>1</div></div>
-            </div>
-          </li>
-          <li class="catalog_product">
-            <div class="catalog_product__img">
-              <img src="assets/products/product_1.png" alt="product_1" />
-              <div class="discount">25%</div>
-              <div class="fav"></div>
-            </div>
-            <div class="catalog_product__country">Грузия</div>
-            <div class="catalog_product__title">Вилла Бланка Москато</div>
-            <div class="catalog_product__desc">Напиток с/а, газ., 0,75 л</div>
-            <div class="catalog_product__price">544 ₽<span>900 ₽</span></div>
-            <div class="catalog_product__actions">
-              <div class="instock">
-                <span>В 20 из 22 магазинах</span>
-              </div>
-              <div class="incart"><div>1</div></div>
-            </div>
-          </li>          <li class="catalog_product">
-            <div class="catalog_product__img">
-              <img src="assets/products/product_1.png" alt="product_1" />
-              <div class="discount">25%</div>
-              <div class="fav"></div>
-            </div>
-            <div class="catalog_product__country">Грузия</div>
-            <div class="catalog_product__title">Вилла Бланка Москато</div>
-            <div class="catalog_product__desc">Напиток с/а, газ., 0,75 л</div>
-            <div class="catalog_product__price">544 ₽<span>900 ₽</span></div>
-            <div class="catalog_product__actions">
-              <div class="instock">
-                <span>В 20 из 22 магазинах</span>
-              </div>
-              <div class="incart"><div>1</div></div>
-            </div>
-          </li>          <li class="catalog_product">
-            <div class="catalog_product__img">
-              <img src="assets/products/product_1.png" alt="product_1" />
-              <div class="discount">25%</div>
-              <div class="fav"></div>
-            </div>
-            <div class="catalog_product__country">Грузия</div>
-            <div class="catalog_product__title">Вилла Бланка Москато</div>
-            <div class="catalog_product__desc">Напиток с/а, газ., 0,75 л</div>
-            <div class="catalog_product__price">544 ₽<span>900 ₽</span></div>
-            <div class="catalog_product__actions">
-              <div class="instock">
-                <span>В 20 из 22 магазинах</span>
-              </div>
-              <div class="incart"><div>1</div></div>
-            </div>
-          </li>
-        </ul>
-      </div>
     </div>
-  </div>
+    </div>
   <footer>
     <div class="wrapper">
       <div class="footer__find_error">Заметили ошибку? Выделите текст ошибки, нажмите Ctrl + Enter, отправьте форму, мы постараемся исправить её.</div>

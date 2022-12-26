@@ -1,0 +1,129 @@
+.product {
+    margin-top: 2.5em;
+
+    .product_info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        &> div:first-child {
+            .product_info_specs {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr 2fr);
+                gap: 1em;
+            }
+        }
+
+        &> div:last-child { 
+            justify-self: center;
+            z-index: 2;
+        }
+
+        .product_info_img {
+            display: grid;
+            grid-template-columns: 1fr;
+            position: relative;
+            width: 25em;
+            height: 32.5em;
+            background-color: #fff;
+            border-radius: 1em;
+
+            img {
+                justify-self: center;
+                align-self: center;
+                width: 12em; 
+            }
+
+            .discount {
+                position: absolute;
+                left: 2em;
+                top: 2em;
+                font-size: .875em;
+                font-weight: 400;
+                background-color: #1f9363;
+                border-radius: 1em;
+                color: #fff;
+                padding: 0.5em 0.75em;
+            }
+        }
+
+        .product_info_price { 
+            width: 25em;
+            height: 12em;
+            background-color: #fff;
+            margin-top: 1.25em;
+            border-radius: 1em;
+        }
+    }
+
+    .product_sommeliers_comment {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3em;
+        margin-top: -15em;
+        color: #fff;
+        padding: 3.75em;
+        border-radius: 2em;
+        background: rgb(31,147,99);
+        background: radial-gradient(circle at bottom right,#1f9363 16%,#364abc 34%,#333 100%);
+
+        p {
+            border-top: 1px dashed #fff;
+            margin-top: 2.5em;
+            padding-top: 2.5em;
+        }
+
+        .product_sommeliers_comment_wrapper {
+            & > div {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr 1fr);
+                gap: 1em;
+
+                & > div {
+                    & > div:first-child {
+                        background-repeat: no-repeat;
+                        font-size: 1.125em;
+                        font-weight: 600;
+                        height: 2em;
+                        padding-left: 3em;
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        align-items: center;
+                        margin-bottom: 0.5em;
+                    }
+
+                    &.wineglass {
+                        & > div:first-child {
+                            @include icon_wineglass;
+                        }
+                    }
+                    
+                    &.grape {
+                        & > div:first-child {
+                            @include icon_grape;
+                        }
+                    }
+                    
+                    &.fragrance {
+                        & > div:first-child {
+                            @include icon_fragrance;
+                        }
+                    }
+                    
+                    &.combination {
+                        & > div:first-child {
+                            @include icon_combination;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    h2 {
+        font-size: 2.25em;
+        font-weight: 800;
+        margin: 0;
+    }
+
+
+}

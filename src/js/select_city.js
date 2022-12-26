@@ -14,6 +14,7 @@
 
         this.ObjectManager;
         this.searchString = '';
+        this.fromProduct = false;
         this.isSelectCity = true;
         this.store_id = localStorage.getItem('current_store') || 1;
         this.city_id = localStorage.getItem('current_city') || 1;
@@ -61,19 +62,24 @@
             renderStores();
         }
 
-        const renderStores = () => {
-            storesUl.html(' ');
-            S('#map').html(' ');
+        const renderStores = (id) => {
+            const id_map = id ? id : 'map';
+            const index = id ? 1 : 0;
+            const storeUlEl = S('.instock_stores__stores_list').els[index];
+            const storesEl = S('ul', S(storeUlEl));
+            storesEl.html(' ');
+            S('#' + id_map).html(' ');
+            this.isSelectCity = index == 1 ? false : true;
 
             getListStores().forEach(city => {
                 const {rsa_id, store_title} = city;
                 const address = `${store_title.split(",")[1]}, ${store_title.split(",")[2]}`;
                 const el = S().strToNode(`<li data-id="${rsa_id}"${(rsa_id==this.store_id)?' class="active"':''}>${(!this.isSelectCity)?'<span>26 шт.</span>':''}${address}</li>`);
                 el.bind('click', clickStore);
-                storesUl.append(el);
+                storesEl.append(el);
             });
 
-            initMap();
+            initMap(id_map);
         }
 
         const clickStore = (e) => {
@@ -105,12 +111,12 @@
             closeStores();
         }
 
-        const initMap = () => {
+        const initMap = (id_map) => {
             const stores = getListStores();
             const x = parseFloat(stores[0].coordinates.split(',')[0]);
             const y = parseFloat(stores[0].coordinates.split(',')[1]);
 
-            const myMap = new ymaps.Map("map", {
+            const myMap = new ymaps.Map(id_map, {
                 center: [x, y],
                 zoom: (stores.length > 3) ? 12 : 14
             }, {
@@ -222,6 +228,12 @@
                 });
 
                 input.bind('input', searchStore);
+
+                if (S('#map_product').el) {
+                    this.isSelectCity = false; 
+                    console.log(this.isSelectCity);
+                    renderStores('map_product');
+                }
             })
         }
 
