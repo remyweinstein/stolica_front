@@ -14,31 +14,38 @@ S(document).bind('scroll', () => {
 });
 
 butInCart.bind('click', (e) => {
-    const el = e.currentTarget;
-    const div = el.children[0];
-    const qty = S(div).text();
-    if (S(el.parentElement).isclass('cart')) return;
-    S(el.parentElement).addclass('cart');
-    S(div).html(`<span class="minus">-</span><span class="qty">${qty}</span><span class="plus">+</span>`)
-});
+    let parent;
+    let el;
 
+    if (S(e.target.parentElement).isclass('incart')) {
+        parent = S(e.target.parentElement.parentElement);
+        el = e.target.parentElement;
+    } else {
+        parent = S(e.currentTarget.parentElement);
+        el = e.currentTarget; 
+    }
+
+    if (parent.isclass('cart')) return;
+
+    const div = S('div', el);
+    const qty = div.text();
+
+    parent.addclass('cart');
+    div.html(`<span class="minus">-</span><span class="qty">${qty}</span><span class="plus">+</span>`)
+});
 S(document).on('click', '.plus', (e, t) => {
-    const el = t;
-    const parent = S(el.parentElement);
-    const qtyEl = S('.qty', parent);
+    const qtyEl = S('.qty', t.parentElement);
     let qty = qtyEl.text()*1 + 1;
     qtyEl.text(qty);
 });
-
 S(document).on('click', '.minus', (e, t) => {
-    const el = t;
-    const parent = S(el.parentElement);
+    const parent = t.parentElement;
     const qtyEl = S('.qty', parent);
     let qty = qtyEl.text()*1 - 1;
 
     if (qty < 1) {
-        parent.html(1);
-        S(parent.el.parentElement.parentElement).delclass('cart');
+        S(parent).html(1);
+        S(parent.parentElement.parentElement).delclass('cart');
     } else {
         qtyEl.text(qty);
     }
@@ -130,4 +137,10 @@ S('.dropdown_sort').bind('click', (e) => {
     S(el).togclass('open');
 });
 
+S('.open_map').bind('click', () => {
+    S('#map_product').togclass('open');
+});
 
+S('.filter_button').bind('click', () => {
+    S('aside').togclass('open');
+});

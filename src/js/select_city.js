@@ -18,6 +18,7 @@
         this.isSelectCity = true;
         this.store_id = localStorage.getItem('current_store') || 1;
         this.city_id = localStorage.getItem('current_city') || 1;
+        this.currentMap = 'map';
 
         const getListCities = () => {
             return Stores.reduce((acc, item) => {
@@ -47,6 +48,7 @@
             overlay.css('display', 'none');
             citiesUl.html(' ');
             storesUl.html(' ');
+            this.currentMap = 'map_product';
         }
 
         const renderCities = () => {
@@ -64,14 +66,15 @@
 
         const renderStores = (id) => {
             const id_map = id ? id : 'map';
-            const index = id ? 1 : 0;
+            const index = id_map == 'map' ? 0 : 1;
             const storeUlEl = S('.instock_stores__stores_list').els[index];
             const storesEl = S('ul', S(storeUlEl));
             storesEl.html(' ');
-            S('#' + id_map).html(' ');
             this.isSelectCity = index == 1 ? false : true;
+            this.currentMap = id_map;
 
-            getListStores().forEach(city => {
+            const stores = getListStores();
+            stores.forEach(city => {
                 const {rsa_id, store_title} = city;
                 const address = `${store_title.split(",")[1]}, ${store_title.split(",")[2]}`;
                 const el = S().strToNode(`<li data-id="${rsa_id}"${(rsa_id==this.store_id)?' class="active"':''}>${(!this.isSelectCity)?'<span>26 шт.</span>':''}${address}</li>`);
@@ -79,14 +82,19 @@
                 storesEl.append(el);
             });
 
-            initMap(id_map);
+            if (stores.length > 0) {
+                S('#' + id_map).html(' ');
+                initMap(id_map);
+            }
         }
 
         const clickStore = (e) => {
             const el = e.currentTarget;
             this.store_id = el.dataset.id;
             openBalloon(el.dataset.id);
-            S('li', storesUl).delclass('active');
+            const storesLis = S('.instock_stores__stores_list ul li');
+
+            storesLis.delclass('active');
             S(el).addclass('active');
         }
 
@@ -132,28 +140,30 @@
             this.objectManager.objects.options.set('preset', 'islands#greenDotIcon');
             this.objectManager.clusters.options.set('preset', 'islands#greenClusterIcons');
 
-            stores.forEach(store => {
-                const x = parseFloat(store.coordinates.split(',')[0]);
-                const y = parseFloat(store.coordinates.split(',')[1]);
-                this.objectManager.add({
-                    type: 'Feature',
-                    id: store.rsa_id,
-                    geometry: {
-                        type: 'Point',
-                        coordinates: [x, y]
-                    },
-                    properties: {
-                        hintContent: store.store_title,
-                        balloonContent: `<p>${store.store_title}</p><button class="button primary select_from_map" data-id="${store.rsa_id}">Выбрать</button>`,
-                    }, 
-                    options: {
-                        iconLayout: 'default#image',
-                        iconImageHref: 'assets/icons/inactive_point.png',
-                        iconImageSize: [14, 14],
-                        iconImageOffset: [-7, -7]
-                    }
-                });    
-            });
+            if (stores.length > 0) {
+                stores.forEach(store => {
+                    const x = parseFloat(store.coordinates.split(',')[0]);
+                    const y = parseFloat(store.coordinates.split(',')[1]);
+                    this.objectManager.add({
+                        type: 'Feature',
+                        id: store.rsa_id,
+                        geometry: {
+                            type: 'Point',
+                            coordinates: [x, y]
+                        },
+                        properties: {
+                            hintContent: store.store_title,
+                            balloonContent: `<p>${store.store_title}</p><button class="button primary select_from_map" data-id="${store.rsa_id}">Выбрать</button>`,
+                        }, 
+                        options: {
+                            iconLayout: 'default#image',
+                            iconImageHref: 'assets/icons/inactive_point.png',
+                            iconImageSize: [14, 14],
+                            iconImageOffset: [-7, -7]
+                        }
+                    });    
+                });
+            }
 
             this.objectManager.objects.events.add('click', function (e) {
                 openBalloon(e.get('objectId'));
@@ -195,12 +205,14 @@
 
         const openInstock = () => {
             this.isSelectCity = false;
+            this.currentMap = 'map';
             S('.instock_stores').addclass('product_instock');
             openStores();
         }
 
         const openSelect = () => {
             this.isSelectCity = true;
+            this.currentMap = 'map';
             S('.instock_stores').delclass('product_instock');
             openStores();
         }
@@ -208,7 +220,8 @@
         const searchStore = (e) => {
             const el = e.currentTarget;
             this.searchString = el.value;
-            renderStores();
+            console.log('this.currentMap = ', this.currentMap); 
+            renderStores(this.currentMap);
         }
 
         const init = () => {
@@ -223,6 +236,10 @@
                     clickOnMap(t);
                 });
 
+                S('#map_product').on('click', '.select_from_map', (e, t) => {
+                    clickOnMap(t);
+                });
+
                 S('.instock_stores').bind('click', (e) => {
                     e.stopPropagation();
                 });
@@ -230,8 +247,8 @@
                 input.bind('input', searchStore);
 
                 if (S('#map_product').el) {
-                    this.isSelectCity = false; 
-                    console.log(this.isSelectCity);
+                    this.isSelectCity = false;
+                    this.currentMap = 'map_product';
                     renderStores('map_product');
                 }
             })

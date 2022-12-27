@@ -355,6 +355,7 @@
 
                     .sub_menu_wrapper {
                         grid-template-columns: 1fr;
+                        padding-bottom: 3em;
 
                         .sub_menu__special_offer {
                             display: none;
@@ -362,7 +363,7 @@
                     }
 
                     .button_arrow {
-                        bottom: 0em;
+                        bottom: 1em;
                     }
                 }
             }

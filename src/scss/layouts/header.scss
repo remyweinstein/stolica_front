@@ -56,6 +56,12 @@ header {
                 display: none;
             }
         }
+
+        .select_store_button {
+            .icon {
+                top: 1em;
+            }
+        }
     }
 }
 
@@ -69,7 +75,7 @@ header {
     }
 }
 
-@media (max-width: $mobile_width) {
+@media (max-width: $tablet_width) {
     header {
         .header_top_panel {
             display: none;

@@ -45,13 +45,12 @@
     }
 
     .icon {
-        position: relative;
-        display: inline-block;
-        right: 15px;
-        top: 0.2em;
+        position: absolute;
+        right: 1em;
+        top: 1.35em;
         border: none;
-        width: 21px;
-        height: 21px;
+        width: 1.1em;
+        height: 1.5em;
         @include icon_navy_grey;
         background-repeat: no-repeat;
     }
