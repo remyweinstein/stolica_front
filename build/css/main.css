@@ -1682,8 +1682,8 @@ footer .footer__bottom .minzdrav:before {
 }
 .progress_bar .progress_bar__line .progress_bar__line_slider {
   position: absolute;
-  border: 1px solid #333333;
-  background-color: #333333;
+  border: 1px solid #8d8d8d;
+  background-color: #8d8d8d;
   height: 0px;
   width: 25%;
   top: -1px;
@@ -1691,6 +1691,15 @@ footer .footer__bottom .minzdrav:before {
 
 @media (max-width: 960px) {
   .progress_bar {
+    position: absolute;
+    width: 17em;
+    grid-template-columns: 1fr;
+    background-color: transparent;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  .progress_bar .but_next_prev {
     display: none;
   }
 }
@@ -1993,6 +2002,9 @@ footer .footer__bottom .minzdrav:before {
 }
 
 @media (max-width: 960px) {
+  .offers {
+    padding-bottom: 3em;
+  }
   .offers .offers_header {
     grid-template-columns: 6fr 2fr;
   }

@@ -15,7 +15,7 @@
       const slide = S(".progress_bar__line_slider", oB);
       const widthSlide = slide.el.offsetWidth;
   
-      let step = 304;
+      const step = oLI.el.offsetWidth;
   
       const _fnPrev = (e) => {
         _clearTimer();
@@ -58,7 +58,7 @@
       }
 
       const _moveSlide = (x) => {
-        slide.el.style.left = (-x * widthSlide * widthObject) / (widthWrapper * widthLine * 4) + 'px';
+        slide.el.style.left = (-x * (widthLine - widthSlide) / (widthObject - document.documentElement.clientWidth)) + 'px';
       }
 
       let timer;
@@ -97,13 +97,12 @@
       }
   
       const _touchEvents = () => {
-        var startX = 0,
-            lastX = null,
-            route = null;
+        let startX = 0;
+        let lastX = null;
+        let route = null;
   
         oB.bind('touchend', (e) => {
             if (route) {
-              console.log('route=', route);
               if (Math.abs(route) > 40) {
                 if (route > 0) {
                   _fnNext(e);

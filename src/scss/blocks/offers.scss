@@ -45,6 +45,8 @@
 
 @media (max-width: $tablet_width) {
     .offers {
+        padding-bottom: 3em;
+
         .offers_header {
             grid-template-columns: 6fr 2fr;
         }
