@@ -4,6 +4,7 @@
     .product_info {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        position: relative;
 
         .product_info_chars {
             display: grid;
@@ -73,6 +74,7 @@
             justify-self: center;
             z-index: 2;
             grid-row: span 3;
+            position: relative;
         }
 
         .product_info_type {

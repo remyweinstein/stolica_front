@@ -1078,12 +1078,20 @@ const submenus = S('.sub_menu');
 const butInCart = S('.incart');
 
 S(document).bind('scroll', () => {
-    if (window.scrollY > heightMenu) {
+    const scrollY =  window.scrollY;
+    if (scrollY > heightMenu) {
         panel.addclass('sticked');
         submenus.addclass('forstick');
     } else {
         panel.delclass('sticked');
         submenus.delclass('forstick');
+    }
+    
+    const prodInfo = S('.product_info>div:nth-child(2)').el;
+    if (prodInfo) {
+        const top = prodInfo.getBoundingClientRect().top;
+        const yOffers = S('.offers').el.getBoundingClientRect().y;
+        if (scrollY < 1200) prodInfo.style.top = (scrollY) + 'px'; 
     }
 });
 
