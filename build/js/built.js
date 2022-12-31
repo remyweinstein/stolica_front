@@ -1219,17 +1219,12 @@ S('.dropdown_sort').bind('click', (e) => {
     S(el).togclass('open');
 });
 
-S('.open_map').bind('click', (e) => {
-    const mapButton = S(e.currentTarget);
-    const map = S('#map_product');
-    map.togclass('open');
-    const isOpen = map.isclass('open');
-    const ul = S('.instock_stores.forproduct>.instock_stores__stores .instock_stores__stores_list ul');
+S('.open_map').bind('click', () => {
+    S('.forproduct').togclass('map');
+});
 
-    S('.instock_stores.forproduct>.instock_stores__stores .instock_stores__stores_list .search__input').css('display', isOpen ? 'none' : 'block');
-    S('.instock_stores.forproduct>.instock_stores__stores .instock_stores__stores_list .filter_sort').css('display', isOpen ? 'none' : 'block'); 
-    mapButton.text(isOpen ? 'Список' : 'На карте');
-    ul.css('display', isOpen ? 'none' : 'block');
+S('.open_list').bind('click', () => {
+    S('.forproduct').togclass('map');
 });
 
 S('.filter_button').bind('click', () => {

@@ -68,6 +68,40 @@
         width: 100%;
         padding: 0;
 
+        &.map {
+            & > div {
+                &.instock_stores__stores {
+                    .instock_stores__stores_list {
+                        #map_product {
+                            display: block;
+                        }
+        
+                        ul {
+                            display: none;
+                        }
+
+                        .instock_stores__stores_list_filters {
+                            .open_map {
+                                display: none;
+                            }
+
+                            .open_list {
+                                display: block;
+                            }
+
+                            .search__input {
+                                display: none;
+                            }
+
+                            .filter_sort {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         & > div {
             background-color: transparent!important;
 
@@ -146,6 +180,22 @@
 
                     .instock_stores__stores_list_filters {
                         grid-template-columns: 3fr 1fr 1fr;
+
+                        .open_list {
+                            height: 2.5em;
+                            line-height: 2.5em;
+                            border: 1px solid #cdcdcd;
+                            border-radius: 2em;
+                            position: relative;
+                            text-align: center;
+                            font-size: 1.25em;
+                            font-weight: 600;
+                            border-radius: 2em;
+                            cursor: pointer;
+                            background: linear-gradient(#f6f6f6,#f6f6f6) padding-box,linear-gradient(to right,#1f9363,#364abc) border-box;
+                            border: 1px solid transparent;
+                            display: none;
+                        }
 
                         .open_map {
                             height: 2.5em;
@@ -441,10 +491,6 @@
                 border-radius: 1em;
                 overflow: hidden;
                 margin-top: 2em;
-
-                &.open {
-                    display: block;
-                }
             }
         }
     }

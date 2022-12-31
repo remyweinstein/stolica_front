@@ -2612,6 +2612,24 @@ footer .footer__bottom .minzdrav:before {
   width: 100%;
   padding: 0;
 }
+.instock_stores.forproduct.map > div.instock_stores__stores .instock_stores__stores_list #map_product {
+  display: block;
+}
+.instock_stores.forproduct.map > div.instock_stores__stores .instock_stores__stores_list ul {
+  display: none;
+}
+.instock_stores.forproduct.map > div.instock_stores__stores .instock_stores__stores_list .instock_stores__stores_list_filters .open_map {
+  display: none;
+}
+.instock_stores.forproduct.map > div.instock_stores__stores .instock_stores__stores_list .instock_stores__stores_list_filters .open_list {
+  display: block;
+}
+.instock_stores.forproduct.map > div.instock_stores__stores .instock_stores__stores_list .instock_stores__stores_list_filters .search__input {
+  display: none;
+}
+.instock_stores.forproduct.map > div.instock_stores__stores .instock_stores__stores_list .instock_stores__stores_list_filters .filter_sort {
+  display: none;
+}
 .instock_stores.forproduct > div {
   background-color: transparent !important;
 }
@@ -2669,6 +2687,21 @@ footer .footer__bottom .minzdrav:before {
 }
 .instock_stores.forproduct > div.instock_stores__stores .instock_stores__stores_list .instock_stores__stores_list_filters {
   grid-template-columns: 3fr 1fr 1fr;
+}
+.instock_stores.forproduct > div.instock_stores__stores .instock_stores__stores_list .instock_stores__stores_list_filters .open_list {
+  height: 2.5em;
+  line-height: 2.5em;
+  border: 1px solid #cdcdcd;
+  border-radius: 2em;
+  position: relative;
+  text-align: center;
+  font-size: 1.25em;
+  font-weight: 600;
+  border-radius: 2em;
+  cursor: pointer;
+  background: linear-gradient(#f6f6f6, #f6f6f6) padding-box, linear-gradient(to right, #1f9363, #364abc) border-box;
+  border: 1px solid transparent;
+  display: none;
 }
 .instock_stores.forproduct > div.instock_stores__stores .instock_stores__stores_list .instock_stores__stores_list_filters .open_map {
   height: 2.5em;
@@ -2889,9 +2922,6 @@ footer .footer__bottom .minzdrav:before {
   border-radius: 1em;
   overflow: hidden;
   margin-top: 2em;
-}
-.instock_stores > div.instock_stores__stores #map_product.open {
-  display: block;
 }
 
 @media (max-width: 1280px) {
