@@ -2885,9 +2885,10 @@ footer .footer__bottom .minzdrav:before {
 .instock_stores > div.instock_stores__stores #map_product {
   display: none;
   width: 100%;
-  height: 700px;
+  height: 500px;
   border-radius: 1em;
   overflow: hidden;
+  margin-top: 2em;
 }
 .instock_stores > div.instock_stores__stores #map_product.open {
   display: block;
