@@ -14,7 +14,7 @@ S(document).bind('scroll', () => {
     }
     
     const prodInfo = S('.product_info>div:nth-child(2)').el;
-    if (prodInfo) {
+    if (prodInfo && document.documentElement.clientWidth > 960) {
         const top = prodInfo.getBoundingClientRect().top;
         const yOffers = S('.offers').el.getBoundingClientRect().y;
         if (scrollY < 1200) prodInfo.style.top = (scrollY) + 'px'; 
