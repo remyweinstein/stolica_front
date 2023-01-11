@@ -1,6 +1,6 @@
 .button {
     position: relative;
-    border: 1px solid #333333;
+    border: 1px solid $text_color;
     border-radius: 2em;
     height: 3.125em;
     line-height: 3.125em;
@@ -20,12 +20,12 @@
     }
 
     &.primary {
-        color: #333333;
+        color: $text_color;
         background-color: #fff;
     }
 
     &.selected {
-        background: linear-gradient(#f6f6f6, #f6f6f6) padding-box,
+        background: linear-gradient($background_color, $background_color) padding-box,
         linear-gradient(to right, #1F9363, #364ABC) border-box;
         border: 1px solid transparent;
 

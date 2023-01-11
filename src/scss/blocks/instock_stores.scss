@@ -8,7 +8,7 @@
     align-items: center;
     background-color: rgba(0,0,0,0.5);
     z-index: 100;
-    color: #f6f6f6;
+    color: $background_color;
 }
 
 .ymaps-2-1-79-balloon {
@@ -192,7 +192,7 @@
                             font-weight: 600;
                             border-radius: 2em;
                             cursor: pointer;
-                            background: linear-gradient(#f6f6f6,#f6f6f6) padding-box,linear-gradient(to right,#1f9363,#364abc) border-box;
+                            background: linear-gradient($background_color, $background_color) padding-box,linear-gradient(to right,#1f9363,#364abc) border-box;
                             border: 1px solid transparent;
                             display: none;
                         }
@@ -208,7 +208,7 @@
                             font-weight: 600;
                             border-radius: 2em;
                             cursor: pointer;
-                            background: linear-gradient(#f6f6f6,#f6f6f6) padding-box,linear-gradient(to right,#1f9363,#364abc) border-box;
+                            background: linear-gradient($background_color, $background_color) padding-box,linear-gradient(to right,#1f9363,#364abc) border-box;
                             border: 1px solid transparent;
                         }
                     }
@@ -443,7 +443,7 @@
                         }
 
                         &.active {
-                            color: #f6f6f6;
+                            color: $background_color;
 
                             &:after {
                                 border: none;

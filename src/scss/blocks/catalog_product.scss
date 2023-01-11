@@ -1,13 +1,12 @@
 .catalog_product {
     width: 15em;
-    padding: 32px;
+    padding: 2em;
+    border: 1px solid transparent;
 
     &:hover {
         border-radius: 1em;
-        background: linear-gradient(#f6f6f6, #f6f6f6) padding-box,
+        background: linear-gradient($background_color, $background_color) padding-box,
         linear-gradient(to right, #1F9363, #364ABC) border-box;
-        border: 1px solid transparent;
-        padding: 31px;
     }
 
     .catalog_product__img {
@@ -189,6 +188,29 @@
                         background: none;
                     }
                 }    
+            }
+        }
+    }
+}
+
+@media (max-width: $mobile_width) {
+    .catalog_product {
+
+        .catalog_product__actions {
+            grid-template-columns: 3fr 1fr;
+
+            .incart {
+                width: 2.75em;
+                height: 2.75em;
+
+                &:after {
+                    width: 2em;
+                    height: 2em;
+                    background-size: 70%;
+                    position: relative;
+                    top: 3px;
+                    left: 4px;
+                }
             }
         }
     }

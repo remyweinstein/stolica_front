@@ -502,12 +502,13 @@
                 }
 
                 .catalog_products {
-                    grid-template-columns: repeat(1,1fr);
+                    grid-template-columns: repeat(2, 2fr);
 
                     .catalog_product {
-                        width: 80%;
+                        width: 90%;
                         justify-self: center;
                         margin-bottom: 1em;
+                        padding: 0.5em;
 
                         &:nth-child(even) {
                             justify-self: center;
@@ -515,6 +516,10 @@
 
                         .catalog_product__img {
                             width: 100%;
+
+                            img {
+                                height: 12em;
+                            }
                         }
                     }
                 }

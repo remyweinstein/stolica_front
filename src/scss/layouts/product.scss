@@ -242,6 +242,7 @@
                     border-radius: 5em;
                     cursor: pointer;
                     position: relative;
+                    border: 1px solid transparent;
                     
                     & > span {
                         background: -webkit-linear-gradient(126.91deg,#1f9363,#364abc);
@@ -418,6 +419,9 @@
                 position: fixed;
                 left: 0;
                 bottom: 0;
+                border-radius: initial;
+                border-top-left-radius: 1em;
+                border-top-right-radius: 1em;
 
                 &.fixed {
 

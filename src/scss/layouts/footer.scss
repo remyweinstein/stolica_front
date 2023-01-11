@@ -152,7 +152,7 @@ footer {
             .footer__contacts {
                 grid-column: span 2;
                 display: grid;
-                grid-template-columns: repeat(2, 1fr);
+                //grid-template-columns: repeat(2, 1fr);
 
                 .logo {
                     grid-column: span 1;
@@ -193,6 +193,7 @@ footer {
 
         .footer__bottom {
             grid-template-columns: 1fr;
+            margin-bottom: 7em;
             
             .minzdrav {
                 margin-top: 2em;
@@ -202,6 +203,18 @@ footer {
                     float: left;
                     display: inline;
                     margin: 0 1.5em 1em 0;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $mobile_width) {
+    footer {
+        .footer__container {
+            .footer__actions {
+                .footer__actions_soc {
+                    font-size: 0.9em;
                 }
             }
         }

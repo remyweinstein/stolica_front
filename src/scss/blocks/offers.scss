@@ -48,7 +48,16 @@
         padding-bottom: 3em;
 
         .offers_header {
-            grid-template-columns: 6fr 2fr;
+            grid-template-columns: 7fr 3fr;
+        }
+    }
+}
+
+@media (max-width: $mobile_width) {
+    .offers {
+
+        .offers_header {
+            grid-template-columns: 1fr;
         }
     }
 }

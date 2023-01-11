@@ -10,7 +10,7 @@
         z-index: 100;
         max-width: 1280px;
         width: 100%;
-        background-color: #f6f6f6;
+        background-color: $background_color;
         top: 7em;
         margin: 0;
     }
@@ -20,6 +20,10 @@
         grid-template-columns: 1fr 5fr 1fr 2fr;
         border-bottom: 1px solid #ebebeb;
         padding: 0.5em 0;
+
+        &:last-child {
+            border: none;
+        }
 
         .cart_popup__product_img {
             text-align: center;
@@ -106,9 +110,9 @@
                         position: absolute;
                         top: 10px;
                         display: block;
-                        width: 8px;
+                        width: 12px;
                         height: 1px;
-                        right: 7px;
+                        right: 5px;
                         background: #c4c4c4;
                     }
 
@@ -117,9 +121,9 @@
                         position: absolute;
                         top: 10px;
                         display: block;
-                        width: 8px;
+                        width: 12px;
                         height: 1px;
-                        left: 7px;
+                        left: 5px;
                         background: #c4c4c4;
                     }
                     
@@ -141,6 +145,7 @@
 
         .cart_popup__sum_head {
             font-size: 1.25em;
+            font-weight: 600;
         }
 
         .cart_popup__sum_price {

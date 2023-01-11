@@ -113,3 +113,12 @@ header {
         }
     }
 }
+
+@media (max-width: $mobile_width) {
+    header {
+
+        .header_search_panel {
+            grid-template-columns: 1fr 3fr;
+        }
+    }
+}
