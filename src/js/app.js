@@ -21,6 +21,10 @@ S(document).bind('scroll', () => {
     }
 });
 
+S(document).on('click', '[data-href]', (e, t) => {
+    document.location.href = t.dataset.href;
+});
+
 butInCart.bind('click', (e) => {
     let parent;
     let el;

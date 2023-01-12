@@ -10,10 +10,6 @@
   
       const oPrev = S(".but_next_prev.prev", oB);
       const oNext = S(".but_next_prev.next", oB);
-      const line = S(".progress_bar__line", oB);
-      const widthLine = line.el.offsetWidth;
-      const slide = S(".progress_bar__line_slider", oB);
-      const widthSlide = slide.el.offsetWidth;
   
       const step = oLI.el.offsetWidth;
   
@@ -58,7 +54,12 @@
       }
 
       const _moveSlide = (x) => {
-        slide.el.style.left = (-x * (widthLine - widthSlide) / (widthObject - document.documentElement.clientWidth)) + 'px';
+        const line = S(".progress_bar__line", oB);
+        const widthLine = line.el.offsetWidth;
+        const slide = S(".progress_bar__line_slider", oB);
+        const widthSlide = slide.el.offsetWidth;
+
+        slide.el.style.left = (-x * (widthLine - widthSlide) / (widthObject - widthWrapper)) + 'px';
       }
 
       let timer;

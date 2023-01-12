@@ -6,7 +6,7 @@
     align-items: center;
     position: relative;
 
-    & > img {
+    & > a {
         display: none;
     }
 
@@ -26,7 +26,7 @@
         padding: 1em 0;
         box-shadow: -6em 0 0 $background_color, 6em 0 0 $background_color;
 
-        & > img {
+        & > a {
             display: block;
         }
        

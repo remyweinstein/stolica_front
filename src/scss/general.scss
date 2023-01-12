@@ -44,6 +44,10 @@ a {
     color: $text_color;
 }
 
+[data-href] {
+    cursor: pointer;
+}
+
 .main {
     margin-top: 1.875em;
 }

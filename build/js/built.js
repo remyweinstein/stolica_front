@@ -929,10 +929,6 @@ const S = function (s, p) {
   
       const oPrev = S(".but_next_prev.prev", oB);
       const oNext = S(".but_next_prev.next", oB);
-      const line = S(".progress_bar__line", oB);
-      const widthLine = line.el.offsetWidth;
-      const slide = S(".progress_bar__line_slider", oB);
-      const widthSlide = slide.el.offsetWidth;
   
       const step = oLI.el.offsetWidth;
   
@@ -977,7 +973,12 @@ const S = function (s, p) {
       }
 
       const _moveSlide = (x) => {
-        slide.el.style.left = (-x * (widthLine - widthSlide) / (widthObject - document.documentElement.clientWidth)) + 'px';
+        const line = S(".progress_bar__line", oB);
+        const widthLine = line.el.offsetWidth;
+        const slide = S(".progress_bar__line_slider", oB);
+        const widthSlide = slide.el.offsetWidth;
+
+        slide.el.style.left = (-x * (widthLine - widthSlide) / (widthObject - widthWrapper)) + 'px';
       }
 
       let timer;
@@ -1093,6 +1094,10 @@ S(document).bind('scroll', () => {
         const yOffers = S('.offers').el.getBoundingClientRect().y;
         if (scrollY < 1200) prodInfo.style.top = (scrollY) + 'px'; 
     }
+});
+
+S(document).on('click', '[data-href]', (e, t) => {
+    document.location.href = t.dataset.href;
 });
 
 butInCart.bind('click', (e) => {
